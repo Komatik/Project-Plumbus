@@ -1,10 +1,9 @@
-function Dinge(column, row, bomb, flagged, src){
+function Dinge(column, row, bomb){
     //this.type
     this.column = column,
     this.row = row,
     this.bomb = bomb || false,
-    this.flagged = false,
-    this.src = src
+    this.flagged = false
 }
 
 Dinge.prototype.clicked = function()
@@ -13,7 +12,7 @@ Dinge.prototype.clicked = function()
                 return false;
             }
         else{
-            
+
         }
     }
 Dinge.prototype.rightclicked = function()
