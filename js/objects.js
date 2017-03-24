@@ -40,7 +40,6 @@ function Board(cols, rows, bombs){
     this.bombs = bombs,
     this.field = new Array(this.cols);
     this.create = function(){
-        var tempBombs = [];
         for(var i = 0; i < this.rows; i++)
             {
                 this.field[i] = new Array(this.rows);
@@ -77,3 +76,4 @@ console.log(board.field[4][4].clicked(board.cols, board.rows, board.field));
 console.log(board.field[5][5].clicked(board.cols, board.rows, board.field));
 console.log(board.field[6][6].clicked(board.cols, board.rows, board.field));
 console.log(board.field);
+
