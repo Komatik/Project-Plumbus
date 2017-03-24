@@ -14,14 +14,15 @@ Dinge.prototype.clicked = function(rij, kolom, field)
                 return false;
             }
         else
-            {       //Grootste van deze rij-1 en 0          //Kleinste van lengte v.d row en deze rij + 1
-               for (var i = Math.max(this.row-1, 0); i <= Math.min(this.row+1, rij.length); i++)//Rij doorlopen
-                    {
-                        for (var p= Math.max(this.column-1, 0); p <= Math.min(this.column, kolom.length); p++)
+            {
+             //Grootste van deze rij-1 en 0          //Kleinste van lengte v.d row en deze rij + 1
+               for (var i = Math.max(this.row-1, 0); i <= Math.min(this.row+1, rij); i++)//Rij doorlopen
+                    {  
+                        for (var p= Math.max(this.column-1, 0); p <= Math.min(this.column+1, kolom); p++)
                             {
                                 if (field[i][p].bomb)
                                     {
-                                        this.count++
+                                        this.count = this.count+1;
                                     }
                             }
                     }
@@ -43,14 +44,12 @@ function Board(cols, rows, bombs){
         for(var i = 0; i < this.rows; i++)
             {
                 this.field[i] = new Array(this.rows);
-            }
-            for (var t = 0; t < this.cols; t++)
-                {
-                    for (var j = 0; j < this.rows; j++)
+                for (var j = 0; j < this.cols; j++)
                         {
-                            this.field[t][j] = new Dinge(t, j);
+                            this.field[i][j] = new Dinge(i, j);
                         }
-                }
+
+            }
         for(var b = 0; b < this.bombs; b++)
             {
                 var col = Math.floor( Math.random() * this.cols);
@@ -58,7 +57,7 @@ function Board(cols, rows, bombs){
                 if (!this.field[col][hor].bomb)
                     {
                        this.field[col][hor].bomb = true;
-                       console.log(col+''+hor);
+                    
                     }
                 else{
                     b--;
@@ -77,4 +76,4 @@ console.log(board.field[3][3].clicked(board.cols, board.rows, board.field));
 console.log(board.field[4][4].clicked(board.cols, board.rows, board.field));
 console.log(board.field[5][5].clicked(board.cols, board.rows, board.field));
 console.log(board.field[6][6].clicked(board.cols, board.rows, board.field));
-console.log(board.field[7][7].clicked(board.cols, board.rows, board.field));
+console.log(board.field);
