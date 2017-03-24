@@ -39,7 +39,6 @@ function Board(cols, rows, bombs){
     this.bombs = bombs,
     this.field = new Array(this.cols);
     this.create = function(){
-        var tempBombs = [];
         for(var i = 0; i < this.rows; i++)
             {
                 this.field[i] = new Array(this.rows);
@@ -70,11 +69,4 @@ function Board(cols, rows, bombs){
 var board = new Board(10, 10, 10);
 board.create();
 
-console.log(board.field[0][0].clicked(board.cols, board.rows, board.field));
-console.log(board.field[1][1].clicked(board.cols, board.rows, board.field));
-console.log(board.field[2][2].clicked(board.cols, board.rows, board.field));
-console.log(board.field[3][3].clicked(board.cols, board.rows, board.field));
-console.log(board.field[4][4].clicked(board.cols, board.rows, board.field));
-console.log(board.field[5][5].clicked(board.cols, board.rows, board.field));
-console.log(board.field[6][6].clicked(board.cols, board.rows, board.field));
-console.log(board.field[7][7].clicked(board.cols, board.rows, board.field));
+board.field[0][0].clicked(board.cols, board.rows, board.field)
