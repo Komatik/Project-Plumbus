@@ -45,7 +45,7 @@ function Board(cols, rows, bombs){
             }
             for (var t = 0; t < this.cols; t++)
                 {
-                    for (var j = 0; j < this.cols; j++)
+                    for (var j = 0; j < this.rows; j++)
                         {
                             this.field[t][j] = new Dinge(t, j);
                         }
