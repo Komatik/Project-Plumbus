@@ -9,10 +9,12 @@ function Dinge(column, row, bomb, flagged, src){
 
 Dinge.prototype.clicked = function()
     {
-        if (this.bomb)
-            {
-
+        if (this.bomb){
+                return false;
             }
+        else{
+            
+        }
     }
 Dinge.prototype.rightclicked = function()
     {
