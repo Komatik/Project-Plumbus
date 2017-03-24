@@ -39,13 +39,42 @@ function Board(cols, rows, bombs){
     this.bombs = bombs,
     this.field = new Array(this.cols);
     this.create = function(){
+        var tempBombs = [];
         for(var i = 0; i < this.rows; i++)
             {
                 this.field[i] = new Array(this.rows);
             }
-        console.log(this.field);
+            for (var t = 0; t < this.cols; t++)
+                {
+                    for (var j = 0; j < this.cols; j++)
+                        {
+                            this.field[t][j] = new Dinge(t, j);
+                        }
+                }
+        for(var b = 0; b < this.bombs; b++)
+            {
+                var col = Math.floor( Math.random() * this.cols);
+                var hor = Math.floor( Math.random() * this.rows);
+                if (!this.field[col][hor].bomb)
+                    {
+                       this.field[col][hor].bomb = true;
+                       console.log(col+''+hor);
+                    }
+                else{
+                    b--;
+                }
+            }
     }
 }
 
-var b = new Board(10, 10, 10);
-b.create();
+var board = new Board(10, 10, 10);
+board.create();
+
+console.log(board.field[0][0].clicked(board.cols, board.rows, board.field));
+console.log(board.field[1][1].clicked(board.cols, board.rows, board.field));
+console.log(board.field[2][2].clicked(board.cols, board.rows, board.field));
+console.log(board.field[3][3].clicked(board.cols, board.rows, board.field));
+console.log(board.field[4][4].clicked(board.cols, board.rows, board.field));
+console.log(board.field[5][5].clicked(board.cols, board.rows, board.field));
+console.log(board.field[6][6].clicked(board.cols, board.rows, board.field));
+console.log(board.field[7][7].clicked(board.cols, board.rows, board.field));
