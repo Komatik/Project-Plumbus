@@ -24,9 +24,8 @@ Dinge.prototype.clicked = function(field)
                             {
                                 testLeeg(empties[i], empties, field)
                             }
-                            console.log(empties)
+                            return empties
                     } 
-                this.flipped = true
                 return this.count;    
             }
     }
@@ -73,9 +72,10 @@ function testRond(self, field){
         { 
             for (var p= Math.max(self.column-1, 0); p <= isMaxC; p++)
                 {
-                    if (field[i][p].bomb){ self.count = self.count+1 }
+                    if (field[i][p].bomb && self.flipped == false){ self.count = self.count+1 }
                 }
         }
+        self.flipped=true
 }
 
 function testLeeg(self, array, field){

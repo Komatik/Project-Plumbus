@@ -2,7 +2,7 @@ window.onload = init;
 
 
 function init(){
-    var newGame = new Board(10,10,10)
+    var newGame = new Board(10,10,50)
     newGame.create()
     createTable(newGame)
 }
@@ -15,13 +15,22 @@ function createTable(boardObj){
         
         for(var j = 0;j < boardObj.cols;j++){
             var cell = row.insertCell()
+            cell.id= i + "-" + j
             cell.innerHTML = ""
             cell.onclick = function(){
                 var row = this.parentNode.rowIndex
                 var col = this.cellIndex 
-                if(!boardObj.field[row][col].flipped){
-                    this.innerHTML=boardObj.field[row][col].clicked(boardObj.field) 
-                }
+         
+                    var val = boardObj.field[row][col].clicked(boardObj.field) 
+                    if(typeof val == "number" || typeof val == "string"){ 
+                        this.innerHTML = val 
+                    } else{
+                        this.innerHTML = 0                        
+                        for(var p = 0;p<val.length;p++){
+                            document.getElementById(val[p].row + "-" + val[p].column).innerText = val[p].count
+                        }
+                    }
+                
             }
         }
     }
