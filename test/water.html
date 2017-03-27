@@ -21,6 +21,7 @@
                 ocean.appendChild(docFrag);
             }
         </script>
+        <link rel="stylesheet" href="sub.css" />
         <style type="text/css">
             body{
                 overflow:hidden;
@@ -29,7 +30,7 @@
             #water{
                 position:absolute;
                 background: linear-gradient(0deg,rgb(0,50,150), rgb(0,150,255));
-                top:0vh;
+                top:10vh;
                 left:0px;
                 height:100vh;
                 width:100%;
@@ -41,7 +42,7 @@
             .wave{
                 background:#a8e3ff;
                 display:inline-block;
-                height:40%;
+                height:30%;
                 width:10px;
                 position:absolute;
                 animation-name: upAndDownWeGo;
@@ -52,13 +53,13 @@
 
             @keyframes upAndDownWeGo{
                 0%{
-                    height:60%;
+                    height:30%;
                 }
                 50%{
-                   height:40%;
+                   height:10%;
                 }
                 100%{
-                   height:60%;
+                   height:30%;
                 }
             }
 
@@ -69,21 +70,55 @@
                 33%{
                    top:50vh;
                 }
-                56%{
+                60%{
                     top:40vh;
                 }
-                89%{
+                85%{
                     top:30vh;
                 }
                 100%{
-                    top:0vh;
+                    top:10vh;
                 }
+            }
 
+            @keyframes upWeGo2{
+                0%{
+                    top:120vh;
+                }
+                33%{
+                   top:120vh;
+                }
+                60%{
+                    top:65vh;
+                }
+                85%{
+                    top:70vh;
+                }
+                100%{
+                    top:50vh;
+                }
             }
         </style>
     </head>
     <body>
         <div id="water">
+        </div>
+        <div class="sea">
+            <div class="bubble"></div>
+            <div class="submarine-wrapper">
+                <div class="submarine-body">
+                    <div class="window"></div>
+                    <div class="engine"></div>
+                    <div class="light"></div>
+                </div>
+                <div class="helix"></div>
+                <div class="hat">
+                <div class="leds-wrapper">
+                    <div class="periscope"></div>
+                    <div class="leds"></div>
+                </div>
+                </div>
+            </div>
         </div>
     </body>
 </html>
