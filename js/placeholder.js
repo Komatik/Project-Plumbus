@@ -2,7 +2,7 @@ window.onload = init;
 
 
 function init(){
-    var newGame = new Board(10,10,50)
+    var newGame = new Board(10,10,10)
     newGame.create()
     createTable(newGame)
 }
@@ -27,10 +27,15 @@ function createTable(boardObj){
                     } else{
                         this.innerHTML = 0                        
                         for(var p = 0;p<val.length;p++){
-                            document.getElementById(val[p].row + "-" + val[p].column).innerText = val[p].count
+                            if(val[p].row==boardObj.field[0].length-1){var isMaxR=val[p].row}else{var isMaxR=val[p].row+1}
+                            if(val[p].column==boardObj.field.length-1){var isMaxC=val[p].column}else{var isMaxC=val[p].column+1}
+                            for(var a=Math.max(val[p].row-1, 0);a<=isMaxR;a++){
+                                for(var b=Math.max(val[p].column-1, 0);b<=isMaxC;b++){
+                                    document.getElementById(a + "-" + b).innerText = boardObj.field[a][b].count
+                                }
+                            }
                         }
                     }
-                
             }
         }
     }
