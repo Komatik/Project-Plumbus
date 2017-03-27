@@ -1,35 +1,35 @@
 window.onload = init;
 
-var bombsList = []
 
 function init(){
-
+    var newGame = new Board(10,10,10)
+    newGame.create()
+    createTable(newGame)
 }
 
-function createTable(rows, cols){
+function createTable(boardObj){
     var table = document.createElement("table")
-
-    for(var i = 0;i < rows;i++){
+    table.id="mineSweeperTable"
+    for(var i = 0;i < boardObj.rows;i++){
         var row = table.insertRow()
         
-        for(var j = 0;j < cols;j++){
-            bombsList[i+""+j] = false
+        for(var j = 0;j < boardObj.cols;j++){
             var cell = row.insertCell()
-
+            cell.innerHTML = ""
+            cell.onclick = function(){
+                var row = this.parentNode.rowIndex
+                var col = this.cellIndex 
+                if(!boardObj.field[row][col].flipped){
+                    this.innerHTML=boardObj.field[row][col].clicked(boardObj.field) 
+                }
+            }
         }
     }
-    document.body.appendChild(table)
+    document.getElementById("content").appendChild(table)
 }
-
-function placeBombs(bombs){
-    var randomArray = []
-    for(var i = 0;i < bombs;i++){
-        var random = parseInt(Math.random()*bombsList.length)
-        if(randomArray.indexOf(random) == -1){ randomArray.push(random) } else {i--}
-    }
-    var nummer = 0
-    for(coord in bombsList){
-        if(randomArray.indexOf(nummer) != -1){ bombsList[coord] = true }
-        nummer++
-    }
-}
+/* ==========================TEST FUNCTIE=============================
+(function(){
+    var cells = document.getElementsByTagName("td")
+    for(var i=0;i< cells.length;i++){ cells[i].click() }
+})()
+*/

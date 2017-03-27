@@ -1,5 +1,5 @@
 function Dinge(column, row, bomb){
-    //this.type
+    this.flipped = false
     this.column = column,
     this.row = row,
     this.bomb = bomb || false,
@@ -7,18 +7,21 @@ function Dinge(column, row, bomb){
     this.count = 0;
 }
 
-Dinge.prototype.clicked = function(rij, kolom, field)
+Dinge.prototype.clicked = function(field)
     {
         if (this.bomb)
             {
-                return false;
+                this.flipped = true;
+                return "💣";
             }
         else
             {
-             //Grootste van deze rij-1 en 0          //Kleinste van lengte v.d row en deze rij + 1
-               for (var i = Math.max(this.row-1, 0); i <= Math.min(this.row+1, rij); i++)//Rij doorlopen
-                    {  
-                        for (var p= Math.max(this.column-1, 0); p <= Math.min(this.column+1, kolom); p++)
+                if(this.row==field[0].length-1){var isMaxR=this.row}else{var isMaxR=this.row+1}
+                if(this.column==field.length-1){var isMaxC=this.column}else{var isMaxC=this.column+1}
+
+                for (var i = Math.max(this.row-1, 0);i <= isMaxR; i++)//Rij doorlopen
+                    { 
+                        for (var p= Math.max(this.column-1, 0); p <= isMaxC; p++)
                             {
                                 if (field[i][p].bomb)
                                     {
@@ -26,7 +29,15 @@ Dinge.prototype.clicked = function(rij, kolom, field)
                                     }
                             }
                     }
-                return this.count;
+                if(this.count==0)
+                    {
+                        
+                    } 
+                else 
+                {
+                    this.flipped = true
+                    return this.count;
+                }
             }
     }
 Dinge.prototype.rightclicked = function()
@@ -45,7 +56,7 @@ function Board(cols, rows, bombs){
                 this.field[i] = new Array(this.rows);
                 for (var j = 0; j < this.cols; j++)
                         {
-                            this.field[i][j] = new Dinge(i, j);
+                            this.field[i][j] = new Dinge(j, i);
                         }
 
             }
@@ -56,7 +67,6 @@ function Board(cols, rows, bombs){
                 if (!this.field[col][hor].bomb)
                     {
                        this.field[col][hor].bomb = true;
-                    
                     }
                 else{
                     b--;
@@ -67,13 +77,3 @@ function Board(cols, rows, bombs){
 
 var board = new Board(10, 10, 10);
 board.create();
-
-console.log(board.field[0][0].clicked(board.cols, board.rows, board.field));
-console.log(board.field[1][1].clicked(board.cols, board.rows, board.field));
-console.log(board.field[2][2].clicked(board.cols, board.rows, board.field));
-console.log(board.field[3][3].clicked(board.cols, board.rows, board.field));
-console.log(board.field[4][4].clicked(board.cols, board.rows, board.field));
-console.log(board.field[5][5].clicked(board.cols, board.rows, board.field));
-console.log(board.field[6][6].clicked(board.cols, board.rows, board.field));
-console.log(board.field);
-
