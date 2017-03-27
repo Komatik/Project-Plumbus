@@ -16,28 +16,18 @@ Dinge.prototype.clicked = function(field)
             }
         else
             {
-                if(this.row==field[0].length-1){var isMaxR=this.row}else{var isMaxR=this.row+1}
-                if(this.column==field.length-1){var isMaxC=this.column}else{var isMaxC=this.column+1}
-
-                for (var i = Math.max(this.row-1, 0);i <= isMaxR; i++)//Rij doorlopen
-                    { 
-                        for (var p= Math.max(this.column-1, 0); p <= isMaxC; p++)
-                            {
-                                if (field[i][p].bomb)
-                                    {
-                                        this.count = this.count+1;
-                                    }
-                            }
-                    }
+                if(this.count==0){ testRond(this, field) }
                 if(this.count==0)
                     {
-                        
+                        var empties = [this]
+                        for(var i = 0;i < empties.length;i++)
+                            {
+                                testLeeg(empties[i], empties, field)
+                            }
+                            console.log(empties)
                     } 
-                else 
-                {
-                    this.flipped = true
-                    return this.count;
-                }
+                this.flipped = true
+                return this.count;    
             }
     }
 Dinge.prototype.rightclicked = function()
@@ -75,5 +65,36 @@ function Board(cols, rows, bombs){
     }
 }
 
-var board = new Board(10, 10, 10);
-board.create();
+function testRond(self, field){
+    if(self.row==field[0].length-1){var isMaxR=self.row}else{var isMaxR=self.row+1}
+    if(self.column==field.length-1){var isMaxC=self.column}else{var isMaxC=self.column+1}
+
+    for (var i = Math.max(self.row-1, 0);i <= isMaxR; i++)//Rij doorlopen
+        { 
+            for (var p= Math.max(self.column-1, 0); p <= isMaxC; p++)
+                {
+                    if (field[i][p].bomb){ self.count = self.count+1 }
+                }
+        }
+}
+
+function testLeeg(self, array, field){
+    if(self.row==field[0].length-1){var isMaxR=self.row}else{var isMaxR=self.row+1}
+    if(self.column==field.length-1){var isMaxC=self.column}else{var isMaxC=self.column+1}
+
+    for (var i = Math.max(self.row-1, 0);i <= isMaxR; i++)//Rij doorlopen
+        { 
+            for (var p= Math.max(self.column-1, 0); p <= isMaxC; p++)
+                {
+                    testRond(field[i][p],field)
+                    if (field[i][p].count==0 && objectTest(field[i][p], array)){ array.push(field[i][p]) }
+                }
+        }
+}
+
+function objectTest(test, arr){
+    for(var i = 0;i < arr.length;i++){
+        if(arr[i].row == test.row && arr[i].column == test.column){ return false }
+    }
+    return true
+}
