@@ -26,7 +26,7 @@
 
             .short_anim{
                 animation-name: drop;
-                animation-duration: 3s;
+                animation-duration: 4s;
                 animation-iteration-count: 6;
                 animation-timing-function: ease-in;
             }
@@ -34,7 +34,7 @@
             .long_anim{
                 animation-name: drop;
                 animation-duration: 6s;
-                animation-iteration-count: 3;
+                animation-iteration-count: 4;
                 animation-timing-function: ease-in;
             }
 
@@ -46,11 +46,24 @@
                 left: 50%;
                 top:110vh;
                 animation-name:dropManneke;
-                animation-duration:10s;
-                animation-iteration-count: 1;
+                animation-duration:8s;
+                animation-iteration-count: 3;
                 animation-timing-function: ease-in;
-
+                z-index:2
             }
+
+            .bottomPortal{
+                top:150vh; 
+                border-radius:75%; 
+                left:50%; 
+                width:150px; 
+                height:50px;
+                background-color:orange;
+                animation-name:dropThePortal;
+                animation-duration:8s;
+                animation-iteration-count: 3;
+            }
+
             @keyframes drop{
                 from {top:110vh;}
                 to{top:-150px;}
@@ -80,6 +93,15 @@
                     top:110vh;
                 }
             }
+
+            @keyframes dropThePortal{
+                0%{
+                   top:150vh;
+                }
+                100%{
+                    top:97vh;
+                }
+            }
         </style>
     </head>
     <body>
@@ -102,5 +124,7 @@
 
         </div>
         <img src="icon.png" class="manneke" />
+        <div class="circle" style="top:-25px; border-radius:75%; left:50%; width:150px; height:50px; background-color:blue;"></div>
+        <div class="circle bottomPortal"></div>
     </body>
 </html>
