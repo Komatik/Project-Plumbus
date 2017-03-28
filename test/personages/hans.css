@@ -1,12 +1,12 @@
-.vis_container{
+.hans_container{
     position:absolute;
     height:175px;
     width:500px;
 }
 
-/*Head van de vis classes hierzo*/
+/*Head van de hans classes hierzo*/
 
-.vis_head{
+.hans_head{
     position:absolute;
     background-image: url(https://www.transparenttextures.com/patterns/arches.png);
     background-repeat: repeat;
@@ -20,7 +20,7 @@
     left:200px;
     z-index:2;
 }
-.vis_eye{
+.hans_eye{
     position: absolute;
     transform: rotate(-90deg);
     top:0px;
@@ -36,7 +36,7 @@
     animation-duration: 3s;
     animation-iteration-count: infinite;
 }
-.vis_eye2{
+.hans_eye2{
     position: absolute;
     transform: rotate(-90deg);
     top:45px;
@@ -52,7 +52,7 @@
     animation-duration: 2800ms;
     animation-iteration-count: infinite;
 }
-.vis_pupil{
+.hans_pupil{
     position:absolute;
     top:5px;
     right:4px;
@@ -62,11 +62,11 @@
     background-color:black;
 }
 
-.vis_mouth{
+.hans_mouth{
     position:absolute;
 }
 
-.vis_beard{
+.hans_beard{
     position:absolute;
     top:30px;
     left:200px;
@@ -74,8 +74,8 @@
     z-index:3;
 }
 
-/*Body van de vis hieronder te vinden*/
-.vis_body{
+/*Body van de hans hieronder te vinden*/
+.hans_body{
     position:absolute;
     top:30px;
     left:50px;
@@ -90,7 +90,7 @@
     border-bottom-left-radius:40%;
     z-index:1;
 }
-.vis_side_fin{
+.hans_side_fin{
     position:absolute;
     top:80px;
     left:60px;
@@ -100,9 +100,15 @@
 	height: 0;
 	width: 40px;
     z-index:1;
+    transform: skewY(0deg);
+    animation-name:back_fin;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-duration: 6s;
+    animation-delay: 3s;
 }
 /*Mja zo wa alleen de vinnen he*/
-.vis_tail{
+.hans_tail{
     position:absolute;
     top:25px;
     left:20px;
@@ -113,13 +119,13 @@
 	height: 0;
 	height: 60px;
     z-index:0;
-    animation-name:back-fin;
+    transform: skewY(0deg);
+    animation-name:back_fin;
     animation-direction: alternate;
-    animation-delay: 5s;
     animation-iteration-count: infinite;
     animation-duration: 3s;
 }
-.vis_upper_fin{
+.hans_upper_fin{
     position:absolute;
     z-index:0;
     top:15px;
@@ -170,100 +176,4 @@
     animation-duration: 3s, 5s;
     animation-iteration-count: infinite, infinite;
     animation-direction: alternate, normal;
-}
-
-@keyframes move{
-    from{left:500px;}
-    to{left:-50px;}
-}
-
-@keyframes bubble_anim1{
-    from{
-        opacity:0.5;
-        top:85px;
-    }
-    to{
-        top:70px;
-          opacity:0.3;
-    }
-}
-
-@keyframes back_fin{
-    from{
-        border-left: 50px solid rgb(255, 60, 60);
-        border-top: 40px solid transparent;
-        border-bottom: 40px solid transparent;
-        border-radius: 30px;  
-    }
-    to{
-        border-left: 20px solid rgb(255, 60, 60);
-        border-top: 10px solid transparent;
-        border-bottom: 10px solid transparent;
-        border-radius: 10px; 
-    }
-}
-
-@keyframes bublle_anim2{
-    from{
-    opacity:0.3;
-    top:85px;
-    }
-    to{
-        top:50px;
-        opacity:0.1;
-    }
-}
-
-@keyframes blink{
-    0%{
-        top:0px;
-        right:50px;
-        border:10px white solid;
-        height: 10px;
-    }
-    40%{
-       top:0px;
-        right:50px;
-        border:10px white solid;
-        height:10px;
-    }
-    50%{
-        top:15px;
-        right:60px;
-        border:0px white solid;
-        height:0px;
-    }
-    60%{
-        top:0px;
-        right:50px;
-        border:10px white solid;
-        height: 10px;
-    }
-}
-
-@keyframes blink2{
-    0%{
-        top:45px;
-        right:50px;
-        border:10px white solid;
-        height: 10px;
-    }
-    40%{
-       top:45px;
-        right:50px;
-        border:10px white solid;
-        height:10px;
-    }
-    50%{
-        top:60px;
-        right:60px;
-        border:0px white solid;
-        height:0px;
-    }
-    60%{
-        top:45px;
-        right:50px;
-        border:10px white solid;
-        height: 10px;
-    }
 }
