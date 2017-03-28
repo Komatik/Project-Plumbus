@@ -30,11 +30,6 @@
     border-radius: 50%;
     border: 10px white solid;
     background-color:black;
-    animation-name:blink;
-    animation-delay: 3s;
-    animation-direction: alternate;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
 }
 .vis_eye2{
     position: absolute;
@@ -46,11 +41,6 @@
     border-radius: 50%;
     border: 10px white solid;
     background-color:black;
-    animation-name:blink2;
-    animation-delay: 2950ms;
-    animation-direction: alternate;
-    animation-duration: 2800ms;
-    animation-iteration-count: infinite;
 }
 .vis_pupil{
     position:absolute;
@@ -100,12 +90,6 @@
 	height: 0;
 	width: 40px;
     z-index:1;
-    transform: skewY(0deg);
-    animation-name:back_fin;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-    animation-duration: 6s;
-    animation-delay: 3s;
 }
 /*Mja zo wa alleen de vinnen he*/
 .vis_tail{
@@ -119,11 +103,6 @@
 	height: 0;
 	height: 60px;
     z-index:0;
-    transform: skewY(0deg);
-    animation-name:back_fin;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-    animation-duration: 3s;
 }
 .vis_upper_fin{
     position:absolute;
@@ -146,34 +125,4 @@
     left:500px;
     opacity:0;
     z-index:3;
-}
-
-.big{
-    height: 20px;
-    width:20px;
-    animation-name:bubble_anim1, move;
-    animation-delay:2s;
-    animation-duration: 2s, 10s;
-    animation-iteration-count: infinite, infinite;
-    animation-direction: alternate, normal;
-}
-
-.big2{
-    height: 12px;
-    width:15px;
-    animation-name:bubble_anim1, move;
-    animation-delay:6s;
-    animation-duration: 1s, 20s;
-    animation-iteration-count: infinite, infinite;
-    animation-direction: alternate, normal;
-}
-
-.small{
-    height: 5px;
-    width:5px;
-    animation-name:bubble_anim2, move;
-    animation-delay:3s;
-    animation-duration: 3s, 5s;
-    animation-iteration-count: infinite, infinite;
-    animation-direction: alternate, normal;
 }
