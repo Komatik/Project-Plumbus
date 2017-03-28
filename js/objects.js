@@ -9,10 +9,10 @@ function Dinge(column, row, parent, bomb){
 }
 
 Dinge.prototype.clicked = function(field)
-    { console.log(this.parent.bombCount)
+    {
         if (this.bomb)
             {
-                this.parent.bombCount
+                this.parent.bombCount--
                 this.flipped = true;
                 this.count = "💣";
             }

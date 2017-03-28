@@ -19,18 +19,25 @@ function createTable(boardObj){
             cell.id= i + "-" + j
             cell.innerHTML = ""
             cell.onclick = function(){
-                var row = this.parentNode.rowIndex
-                var col = this.cellIndex 
+                var row = this.parentNode.rowIndex,
+                    col = this.cellIndex;
                 var val = boardObj.field[row][col].clicked(boardObj.field) 
 
                 for(var p = 0;p<val.length;p++){
                     document.getElementById(val[p].row + "-" + val[p].column).innerText = boardObj.field[val[p].row][val[p].column].count
                 }
+                
             }
         }
     }
     document.getElementById("content").appendChild(table)
 }
+/* ---------------HANDLEIDING---------------------
+AANTAL BOMMEN: boardObj.bombCount
+RESTART ZONDER REFRESH: init()
+*/
+
+
 /* ==========================TEST FUNCTIE=============================
 (function(){
     var cells = document.getElementsByTagName("td")
