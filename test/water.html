@@ -22,6 +22,7 @@
             }
         </script>
         <link rel="stylesheet" href="sub.css" />
+        <link rel="stylesheet" href="vis.css" />
         <style type="text/css">
             body{
                 overflow:hidden;
@@ -50,7 +51,13 @@
                 animation-iteration-count: infinite;
                 animation-timing-function: ease-in-out;
             }
-
+            .vis_container{
+                top:50vh;
+                left:30%;
+                animation-name:upWeGo2;
+                animation-duration: 6s;
+                animation-iteration-count: 1;
+            }
             @keyframes upAndDownWeGo{
                 0%{
                     height:20%;
@@ -70,10 +77,10 @@
                 33%{
                    top:50vh;
                 }
-                60%{
+                45%{
                     top:40vh;
                 }
-                85%{
+                70%{
                     top:30vh;
                 }
                 100%{
@@ -88,11 +95,11 @@
                 33%{
                    top:120vh;
                 }
-                60%{
-                    top:65vh;
+                40%{
+                    top:90vh;
                 }
-                85%{
-                    top:70vh;
+                50%{
+                    top:85vh;
                 }
                 100%{
                     top:50vh;
@@ -103,7 +110,9 @@
     <body>
         <div id="water">
         </div>
-        <div class="sea">
+        <!--
+            Submarine
+            <div class="sea">
             <div class="bubble"></div>
             <div class="submarine-wrapper">
                 <div class="submarine-body">
@@ -119,6 +128,41 @@
                 </div>
                 </div>
             </div>
+        -->
+
+         <div class="vis_container">
+            <!--Head-->
+            <div class="vis_head">
+                <div class="vis_eye">
+                </div>
+                <div class="vis_eye2">
+                </div>
+                <div class="vis_mouth">
+                </div>
+            </div>
+             <!--Beard-->
+            <img src="beard.png" class="vis_beard" />
+            <!--Back fin-->
+            <div class="vis_upper_fin">
+            </div>
+            <!--Body-->
+            <div class="vis_body">
+                <div class="vis_side_fin">   
+                </div>
+            </div>
+            <!--Back fin-->
+            <div class="Vis_tail">
+            </div>
+
+            <!--Bubbles-->
+            <div class="bubble big">
+            </div>
+            <div class="bubble big2">
+            </div>
+            <div class="bubble small">
+            </div>
+        </div>
+
         </div>
     </body>
 </html>
