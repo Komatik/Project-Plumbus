@@ -1,0 +1,26 @@
+#peter .vis_head{
+    background-color:rgb(200, 200, 250);
+    border: 3px outset rgb(200, 200, 250);
+    background-image: url(http://www.transparenttextures.com/patterns/black-scales.png);
+}
+
+#peter .vis_body{
+    background-image: url(http://www.transparenttextures.com/patterns/black-scales.png);
+    background-color:rgb(200, 200, 250);
+    border: 3px outset rgb(200, 200, 250);
+    border-top-left-radius:90%;
+    border-bottom-left-radius:70%;
+    border-bottom-right-radius:100%;
+}
+
+#peter .vis_side_fin{
+    border-bottom: 40px solid rgb(255, 100, 50);
+}
+/*Mja zo wa alleen de vinnen he*/
+#peter .vis_tail{
+    border-left: 50px solid rgb(255, 100, 50);
+}
+
+#peter .fin2{
+    animation-duration: 1s;
+}

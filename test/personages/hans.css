@@ -1,0 +1,17 @@
+#hans .vis_head{
+    background-color:rgb(255, 255, 0);
+    border: 3px outset rgb(255, 255, 0);
+}
+
+#hans .vis_body{
+    background-color:rgb(255, 255, 0);
+    border: 3px outset rgb(255, 255, 0);
+}
+
+#hans .vis_side_fin{
+    border-bottom: 40px solid rgb(200, 255, 120);
+}
+/*Mja zo wa alleen de vinnen he*/
+#hans .vis_tail{
+    border-left: 50px solid rgb(200, 255, 120);
+}
