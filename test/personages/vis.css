@@ -1,12 +1,12 @@
-.hans_container{
+.vis_container{
     position:absolute;
     height:175px;
     width:500px;
 }
 
-/*Head van de hans classes hierzo*/
+/*Head van de vis classes hierzo*/
 
-.hans_head{
+.vis_head{
     position:absolute;
     background-image: url(https://www.transparenttextures.com/patterns/arches.png);
     background-repeat: repeat;
@@ -20,7 +20,7 @@
     left:200px;
     z-index:2;
 }
-.hans_eye{
+.vis_eye{
     position: absolute;
     transform: rotate(-90deg);
     top:0px;
@@ -36,7 +36,7 @@
     animation-duration: 3s;
     animation-iteration-count: infinite;
 }
-.hans_eye2{
+.vis_eye2{
     position: absolute;
     transform: rotate(-90deg);
     top:45px;
@@ -52,7 +52,7 @@
     animation-duration: 2800ms;
     animation-iteration-count: infinite;
 }
-.hans_pupil{
+.vis_pupil{
     position:absolute;
     top:5px;
     right:4px;
@@ -62,11 +62,11 @@
     background-color:black;
 }
 
-.hans_mouth{
+.vis_mouth{
     position:absolute;
 }
 
-.hans_beard{
+.vis_beard{
     position:absolute;
     top:30px;
     left:200px;
@@ -74,8 +74,8 @@
     z-index:3;
 }
 
-/*Body van de hans hieronder te vinden*/
-.hans_body{
+/*Body van de vis hieronder te vinden*/
+.vis_body{
     position:absolute;
     top:30px;
     left:50px;
@@ -90,7 +90,7 @@
     border-bottom-left-radius:40%;
     z-index:1;
 }
-.hans_side_fin{
+.vis_side_fin{
     position:absolute;
     top:80px;
     left:60px;
@@ -108,7 +108,7 @@
     animation-delay: 3s;
 }
 /*Mja zo wa alleen de vinnen he*/
-.hans_tail{
+.vis_tail{
     position:absolute;
     top:25px;
     left:20px;
@@ -125,7 +125,7 @@
     animation-iteration-count: infinite;
     animation-duration: 3s;
 }
-.hans_upper_fin{
+.vis_upper_fin{
     position:absolute;
     z-index:0;
     top:15px;
