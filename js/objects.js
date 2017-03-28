@@ -4,41 +4,48 @@ function Dinge(column, row, parent, bomb){
     this.column = column,
     this.row = row,
     this.bomb = bomb || false,
-    this.flagged = false,
+    this.flagged = ""
     this.count = 0;
 }
 
 Dinge.prototype.clicked = function(field)
-    {
-        if (this.bomb)
-            {
-                this.parent.bombCount--
-                this.flipped = true;
-                this.count = "💣";
-            }
-        if(this.count==0){ testRond(this, field) }
-        if(this.count==0)
-            {
-                var empties = [this]
-                for(var i = 0;i < empties.length;i++)
-                    {
-                        testRond(empties[i], field, true, empties)
-                    }
-                    return empties
-            } 
-        return [this];    
-            
+    {   
+        if(this.flagged==""){
+            if(this.parent.time==0){ this.parent.start() }
+            if (this.bomb)
+                {
+                    this.parent.bombCount--
+                    this.flipped = true;
+                    this.count = "💣";
+                }
+            if(this.count==0){ testRond(this, field) }
+            if(this.count==0)
+                {
+                    var empties = [this]
+                    for(var i = 0;i < empties.length;i++)
+                        {
+                            testRond(empties[i], field, true, empties)
+                            empties[i].flipped=true
+                        }
+                        return empties
+                } else{ this.flipped=true }
+            return [this];    
+        } else { return [] }
     }
 
 Dinge.prototype.rightclicked = function()
     {
-        this.flagged = !this.flagged
+        if(!this.flipped){
+            this.flagged=="" ? this.flagged="f" : this.flagged=="f" ? this.flagged="q" : this.flagged=""
+        } else { this.flagged=false }
     }
 
 function Board(cols, rows, bombs){
     this.cols = cols,
     this.rows = rows,
     this.bombs = bombs,
+    this.time = 0,
+    this.start = ()=>{setInterval(()=>{this.time+=0.1},100)}
     this.bombCount = bombs,
     this.field = new Array(this.cols);
     this.create = function(){
@@ -69,20 +76,20 @@ function Board(cols, rows, bombs){
 function testRond(self, field, fromLeeg = false, array){
     if(self.row==field[0].length-1){var isMaxR=self.row}else{var isMaxR=self.row+1}
     if(self.column==field.length-1){var isMaxC=self.column}else{var isMaxC=self.column+1}
-
+    
     for (var i = Math.max(self.row-1, 0);i <= isMaxR; i++)//Rij doorlopen
         { 
             for (var p= Math.max(self.column-1, 0); p <= isMaxC; p++)
                 {
                     if(fromLeeg){
-                        testRond(field[i][p],field)
-                        if (self.count==0 && objectTest(field[i][p], array)){ array.push(field[i][p]) }
+                        if(field[i][p].count==0){ testRond(field[i][p],field) }
+                        if (self.count==0 && objectTest(field[i][p], array)){ array.push(field[i][p]); self.flipped=true;
+                        } else { self.flipped=true }
                     } else {
-                        if (field[i][p].bomb && self.flipped == false){ self.count = self.count+1 }
+                        if (field[i][p].bomb && self.flipped == false){ self.count = self.count+1; }
                     }
                 }
         }
-        self.flipped=true
 }
 
 function objectTest(test, arr){

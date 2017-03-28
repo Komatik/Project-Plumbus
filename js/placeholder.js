@@ -18,20 +18,35 @@ function createTable(boardObj){
             var cell = row.insertCell()
             cell.id= i + "-" + j
             cell.innerHTML = ""
-            cell.onclick = function(){
-                var row = this.parentNode.rowIndex,
-                    col = this.cellIndex;
-                var val = boardObj.field[row][col].clicked(boardObj.field) 
-
-                for(var p = 0;p<val.length;p++){
-                    document.getElementById(val[p].row + "-" + val[p].column).innerText = boardObj.field[val[p].row][val[p].column].count
-                }
-                
-            }
+            cell.onmousedown = ()=>{testValues(boardObj)}
         }
     }
     document.getElementById("content").appendChild(table)
 }
+
+function testValues(boardObj){
+    var time,
+        selObj = boardObj.field[event.target.parentNode.rowIndex][event.target.cellIndex]
+
+    if(boardObj.time==0){
+        time = setInterval(()=>{document.getElementById("timer").innerText=Math.round(boardObj.time*10)/10},49)
+    }
+    if(event.button==0){
+        var val = selObj.clicked(boardObj.field) 
+        
+        for(var p = 0;p<val.length;p++){
+            document.getElementById(val[p].row + "-" + val[p].column).innerText = boardObj.field[val[p].row][val[p].column].count
+        }
+    } else if(event.button == 2){
+        selObj.rightclicked()
+        switch(selObj.flagged){
+            case(""):event.target.innerText="";break;
+            case("f"):event.target.innerText="⛳";break;
+            case("q"):event.target.innerText="?";break;
+        }
+    }
+}
+
 /* ---------------HANDLEIDING---------------------
 AANTAL BOMMEN: boardObj.bombCount
 RESTART ZONDER REFRESH: init()
