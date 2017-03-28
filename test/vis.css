@@ -1,0 +1,48 @@
+.vis_container{
+    position:absolute;
+    height:175px;
+    width:320px;
+    border: 2px black solid;
+}
+
+.vis_head{
+    position:absolute;
+    background-color:rgb(255, 0, 0);
+    border: 3px outset rgb(230, 100, 100);
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    top:0px;
+    right:0px;
+    z-index:2;
+}
+
+.vis_eye{
+    position: absolute;
+    top:30px;
+    right:25px;
+    height:20px;
+    width:25px;
+    border-radius: 50%;
+    border:grey inset 2px;
+    background-color:white;
+}
+.vis_pupil{
+    position:absolute;
+    top:5px;
+    right:4px;
+    height:10;
+    width:10;
+    border-radius: 50%;
+    background-color:black;
+}
+.vis_body{
+    position:absolute;
+    top:30px;
+    left:60px;
+    width:200px;
+    height:120px;
+    background-color:rgb(255, 0, 0);
+    border: 3px solid rgb(230, 100, 100);
+    z-index:1;
+}
