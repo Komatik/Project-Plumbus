@@ -1,0 +1,130 @@
+.vis_container{
+    position:absolute;
+    height:175px;
+    width:500px;
+}
+
+/*Head van de vis classes hierzo*/
+
+.vis_head{
+    position:absolute;
+    background-image: url(https://www.transparenttextures.com/patterns/arches.png);
+    background-repeat: repeat;
+    transform: rotate(90deg);
+    background-color:rgb(255, 0, 0);
+    border: 3px outset rgb(255, 0, 0);
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    top:20px;
+    left:200px;
+    z-index:2;
+}
+.vis_eye{
+    position: absolute;
+    transform: rotate(-90deg);
+    top:0px;
+    right:50px;
+    height:10px;
+    width:10px;
+    border-radius: 50%;
+    box-sizing:content-box;
+    border: 10px white solid;
+    background-color:black;
+}
+.vis_eye2{
+    position: absolute;
+    transform: rotate(-90deg);
+    top:45px;
+    right:50px;
+    height:10px;
+    width:10px;
+    border-radius: 50%;
+    box-sizing:content-box;
+    border: 10px white solid;
+    background-color:black;
+}
+.vis_pupil{
+    position:absolute;
+    top:5px;
+    right:4px;
+    height:10;
+    width:10;
+    border-radius: 50%;
+    background-color:black;
+}
+
+.vis_mouth{
+    position:absolute;
+}
+
+.vis_beard{
+    position:absolute;
+    top:28px;
+    left:195px;
+    height:150px;
+    z-index:3;
+}
+
+/*Body van de vis hieronder te vinden*/
+.vis_body{
+    position:absolute;
+    top:30px;
+    left:50px;
+    width:200px;
+    height:100px;
+    background-image: url(https://www.transparenttextures.com/patterns/arches.png);
+    background-repeat: repeat;
+    background-color:rgb(255, 0, 0);
+    border: 3px solid rgb(255, 60, 60);
+    border-radius:50px;
+    border-top-left-radius:60%;
+    border-bottom-left-radius:40%;
+    z-index:1;
+}
+.vis_side_fin{
+    position:absolute;
+    top:80px;
+    left:60px;
+    border-bottom: 40px solid rgb(255, 60, 60);
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	height: 0;
+	width: 40px;
+    z-index:1;
+}
+/*Mja zo wa alleen de vinnen he*/
+.vis_tail{
+    position:absolute;
+    top:45px;
+    left:20px;
+    border-left: 50px solid rgb(255, 60, 60);
+	border-top: 40px solid transparent;
+	border-bottom: 40px solid transparent;
+    border-radius: 30px;
+	height: 0;
+	height: 60px;
+    z-index:0;
+}
+.vis_upper_fin{
+    position:absolute;
+    z-index:0;
+    top:15px;
+    left:120px;
+    width: 80px;
+	height: 20px;
+    transform: skew(20deg) rotate(-5deg);
+	background: rgb(255, 100, 50);
+}
+
+/*Bubbeltjes*/
+
+.bubble{
+    border-radius: 50%;
+    background-color: rgb(0, 150, 255);
+    position:relative;
+    top:85px;
+    left:500px;
+    opacity:0;
+    z-index:3;
+}

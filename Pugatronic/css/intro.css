@@ -6,7 +6,7 @@
     background:#0082EA;
     width: 10px;
     z-index: 3;
-    animation-name: move;
+    animation-name: wave;
     animation-delay: 0s;
     animation-direction: alternate;
     animation-duration: 3s;
@@ -17,10 +17,10 @@
     position:absolute;
     bottom:70vh;
     height:10vh;
-    background:#0040AA;
+    background:#00AABB;
     width: 10px;
     z-index: 2;
-    animation-name: move;
+    animation-name: wave;
     animation-delay: 1s;
     animation-direction: alternate;
     animation-duration: 5s;
@@ -37,11 +37,27 @@
     background-color: white;
 }
 
-@keyframes move{
+@keyframes wave{
     from{
         height:10vh;
     }
     to{
         height:25vh;
     }
+}
+
+/*Alles om de mijn te animeren*/
+
+.mine_container{
+    top:40vh;
+    left:80vh;
+    z-index:4;
+    transform: scale(0.5, 0.5);
+}
+
+/*vis*/
+.vis_container{
+    top:40vh;
+    left:20vh;
+    z-index:4;
 }
