@@ -1,0 +1,33 @@
+#twee{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    border: solid 1px #fff;
+}
+
+.portfolio_list{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+
+#twee{
+    list-style: none;
+    border: solid 1px #fff;
+}
+
+#twee label{
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: solid 1px #fff;
+}
+
+#twee label a{
+    padding: 5px;
+    color: #fff;
+}
+
