@@ -18,6 +18,14 @@
                 wave.style.webkitAnimationDelay = (i/100) + "s";
                 }
 
+                for(var p = 0; p < waveCount; p++){
+                var wave2 = document.createElement("div");
+                wave2.className += " wave2";
+                docFrag.appendChild(wave2);
+                wave2.style.left = p * waveWidth + "px";
+                wave2.style.webkitAnimationDelay = (p/100) + "s";
+                }
+
                 ocean.appendChild(docFrag);
             }
         </script>
@@ -29,6 +37,8 @@
             }
             #water{
                 position:absolute;
+                background-image: url(https://www.transparenttextures.com/patterns/cartographer.png);
+                background-repeat: repeat;
                 background: linear-gradient(0deg,rgb(0,50,150), rgb(0,150,255));
                 top:10vh;
                 left:0px;
@@ -49,6 +59,20 @@
                 animation-duration: 3s;
                 animation-iteration-count: infinite;
                 animation-timing-function: ease-in-out;
+                z-index:2;
+            }
+             .wave2{
+                background:#a8e3ff;
+                display:inline-block;
+                height:20%;
+                width:10px;
+                position:absolute;
+                animation-name: upAndDownWeGo;
+                animation-duration: 3s;
+                animation-delay: 1s;
+                animation-iteration-count: infinite;
+                animation-timing-function: ease-in-out;
+                z-index:3;
             }
             .vis_container{
                 top:50vh;

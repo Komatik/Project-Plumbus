@@ -37,6 +37,7 @@ function testValues(boardObj){
         for(var p = 0;p<val.length;p++){
             document.getElementById(val[p].row + "-" + val[p].column).innerText = boardObj.field[val[p].row][val[p].column].count
         }
+        winOrLose(boardObj, selObj)
     } else if(event.button == 2){
         selObj.rightclicked()
         switch(selObj.flagged){
@@ -44,6 +45,12 @@ function testValues(boardObj){
             case("f"):event.target.innerText="⛳";break;
             case("q"):event.target.innerText="?";break;
         }
+    }
+}
+
+function winOrLose(board, clickedObj){
+    if(clickedObj.count=="💣"){ 
+        
     }
 }
 

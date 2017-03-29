@@ -14,8 +14,12 @@ Dinge.prototype.clicked = function(field)
             if(this.parent.time==0){ this.parent.start() }
             if (this.bomb)
                 {
-                    this.parent.bombCount--
-                    this.flipped = true;
+                    for(var i=0;i<field.length;i++){
+                        for(var j=0;j<field[i].length;j++){
+                            field[i][j].flipped=true; 
+                            field[i][j].flagged="lost";
+                        }
+                    } console.log(field)
                     this.count = "💣";
                 }
             if(this.count==0){ testRond(this, field) }
@@ -36,7 +40,7 @@ Dinge.prototype.clicked = function(field)
 Dinge.prototype.rightclicked = function()
     {
         if(!this.flipped){
-            this.flagged=="" ? this.flagged="f" : this.flagged=="f" ? this.flagged="q" : this.flagged=""
+            this.flagged=="" ? (this.flagged="f",this.parent.bombCount--) : this.flagged=="f" ? this.flagged="q" : (this.flagged="",this.parent.bombCount++) ; 
         } else { this.flagged=false }
     }
 
