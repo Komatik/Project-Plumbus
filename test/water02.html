@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            body{
+                background:white;
+            }
+            #water{
+                position:absolute;
+                background:lightblue;
+                height:50vh;
+                width: 100%;
+                bottom:0px;
+                left:0px;
+                z-index: 0
+            }
+            .wave{
+                position:absolute;
+                bottom:50vh;
+                height:10vh;
+                background:lightblue;
+                width: 10px;
+                z-index: 1;
+                animation-name: move;
+                animation-delay: 0s;
+                animation-direction: alternate;
+                animation-duration: 3s;
+                animation-iteration-count: infinite;
+                animation-timing-function: ease-in-out;
+            }
+            .wavetwee{
+                position:absolute;
+                bottom:50vh;
+                height:10vh;
+                background:blue;
+                width: 10px;
+                z-index: 0;
+                animation-name: move;
+                animation-delay: 2s;
+                animation-direction: alternate;
+                animation-duration: 4s;
+                animation-iteration-count: infinite;
+                animation-timing-function: ease-in-out;
+            }
+
+            @keyframes move{
+                from{
+                    height:10vh;
+                }
+                to{
+                    height:30vh;
+                }
+            }
+        </style>
+        <script>
+            window.onload = function(){
+                var ocean = document.getElementById("water"),
+                    waveWidth = 10,
+                    waveCount = Math.floor(window.innerWidth/waveWidth),
+                    docFrag = document.createDocumentFragment();
+
+                for(var i = 0; i < waveCount; i++)
+                {
+                    var wave = document.createElement("div");
+                    wave.className += " wave";
+                    docFrag.appendChild(wave);
+                    wave.style.left = i * waveWidth + "px";
+                    wave.style.webkitAnimationDelay = (i/100) + "s";
+                }
+
+                for(var p = 0; p < waveCount; p++)
+                {
+                    var wave2 = document.createElement("div");
+                    wave2.className += " wavetwee";
+                    docFrag.appendChild(wave2);
+                    wave2.style.left = p * waveWidth + "px";
+                    wave2.style.webkitAnimationDelay = (p/100) + "s";
+                }
+
+                ocean.appendChild(docFrag);
+            }
+        </script>
+    </head>
+    <body>
+        <div id="water">
+
+        </div>
+    </body>
+</html>
