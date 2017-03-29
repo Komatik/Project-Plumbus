@@ -8,8 +8,24 @@
     width:100%;
     top:0px;
     left:0px;
-    background: linear-gradient(0deg,rgb(0, 0, 50) 100vh,  rgb(0,50,150) 200vh, rgb(0,150,255))
+    background: linear-gradient(0deg,rgb(0, 0, 50) 100vh,  rgb(0,50,150) 150vh, rgb(0,150,255))
 }
 .container{
     height:100vh;
 }
+
+#een{
+    position:absolute;
+    top:0vh;
+}
+
+#twee{
+    position:absolute;
+    top:100vh;
+}
+#drie{
+    position:absolute;
+    top:200vh;
+}
+
+
