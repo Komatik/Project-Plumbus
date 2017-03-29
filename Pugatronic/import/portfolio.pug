@@ -1,0 +1,11 @@
+.portfolio_list(border="0")
+    each val in ['wouter cox', 'Hans Hendrickx', 'Iwan Kimpe', 'Steven Leysen', 'Peter Melis', 'Kevin Olzack', 'Senne Peeters', 'Samir Sebaoui', 'Jeroen Van Hoof', 'Max Verheyen']
+        label(for=val) 
+            h3 #{ val }
+            .icons
+                a(href='')
+                    i(class="fa fa-linkedin" aria-hidden="true")
+                a(href='')
+                    i(class="fa fa-cloud-download" aria-hidden="true")
+                a(href='')
+                    i(class="fa fa-user" aria-hidden="true")
