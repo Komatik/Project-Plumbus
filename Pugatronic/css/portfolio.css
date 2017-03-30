@@ -5,27 +5,25 @@
     border: solid 1px #ff0000;
 }
 
-.portfolio_list{
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    color: #fff;
-}
-
 #twee label{
-    width: 120%;
+    width: 50vw;
     padding: 20px;
     margin: 5px;
     display: flex;
     font-size: 10px;
     flex-direction: row;
     justify-content: space-between;
-    /*border: solid 1px #fff;*/
 }
 
 #twee label a{
     padding: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
     color: #fff;
+}
+#twee label:hover{
+    animation: pf_hover 1s ease-in-out infinite;
+    border: solid 1px #fff;
 }
 
 .icons > a{
@@ -35,3 +33,7 @@
 .icons > a >:hover{
     color: lightblue
 }
+
+/*
+    ========= KEYFRAMES =========
+*/
