@@ -2335,3 +2335,8 @@
   overflow: visible;
   clip: auto;
 }
+
+@font-face {
+    font-family: fipps;
+    src: url("../fonts/Fipps-Regular.otf") format("opentype");
+}
