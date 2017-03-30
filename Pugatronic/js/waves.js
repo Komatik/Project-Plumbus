@@ -2,7 +2,7 @@ window.onload = function()
     {
         var ocean = document.getElementById("een"),
             waveWidth = 10,
-            waveCount = Math.floor(window.innerWidth/waveWidth)-1,
+            waveCount = Math.floor(window.innerWidth/waveWidth),
             docFrag = document.createDocumentFragment();
 
         for(var i = 0; i < waveCount; i++)
