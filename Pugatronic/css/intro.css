@@ -55,7 +55,7 @@
     transform: scale(0.5, 0.5);
     animation-name: move_up, wobble, wobble_side_2;
     animation-duration: 7s, 5s, 10s;
-    animation-delay: 0s, 8s, 8s;
+    animation-delay: 0s, 7s, 7s;
     animation-iteration-count: 1, infinite, infinite;
     animation-direction: normal, alternate, alternate;
     animation-timing-function: ease-out, ease-in-out, ease-in-out;
@@ -116,8 +116,8 @@
 
 .vis_container:hover .vis_eye{
     animation: none;
-    height:1.5vh;
-    width:1.5vh;
+    height:1.2vh;
+    width:1.2vh;
 }
 
 .vis_container:hover .vis_eye2{

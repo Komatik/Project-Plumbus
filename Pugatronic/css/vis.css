@@ -8,7 +8,7 @@
 
 .vis_head{
     position:absolute;
-    background-image: url(https://www.transparenttextures.com/patterns/arches.png);
+    background-image: url(https://www.transparenttextures.com/patterns/silver-scales.png);
     background-repeat: repeat;
     transform: rotate(90deg);
     background-color:rgb(255, 0, 0);
@@ -60,7 +60,7 @@
     left:50px;
     width:200px;
     height:100px;
-    background-image: url(https://www.transparenttextures.com/patterns/arches.png);
+    background-image: url(https://www.transparenttextures.com/patterns/silver-scales.png);
     background-repeat: repeat;
     background-color:rgb(255, 0, 0);
     border: 3px inset rgb(255, 60, 60);
