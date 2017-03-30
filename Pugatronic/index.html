@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/font-awesome.css">
     <!-- mijnveger -->
     <link rel="stylesheet" href="css/mijnveger.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Mono">
   </head>
   <body>
     <div id="background">
@@ -125,17 +126,41 @@
       <div class="container" id="drie">
         <div class="container-left"></div>
         <div class="container-right">
-          <div class="menu">
+          <div class="menu" id="menu">
             <div class="navbar">
-              <div class="newGame"> 
-                <h3 class="header">New Game</h3>
+              <div class="newGame" id="newGame"> 
+                <h4 class="header">New Game</h4>
               </div>
-              <div class="continue"> 
-                <h3 class="header">Continue</h3>
+              <div class="verLine"></div>
+              <div class="continue" id="continue">
+                <h4 class="header">Continue</h4>
               </div>
-              <div class="highscores"> 
-                <h3 class="header">Highscores</h3>
+              <div class="verLine"></div>
+              <div class="highscores" id="highscores">
+                <h4 class="header">Highscores</h4>
               </div>
+            </div>
+            <div class="horLine"></div>
+            <div class="menuContent" id="menuContent">
+              <div class="menuNewGame" id="menuNewGame">
+                <div class="rows">
+                  <label class="lbl">Rows:</label>
+                  <input type="number" value="3" min="3" max="40" id="rows">
+                </div>
+                <div class="cols">
+                  <label class="lbl">Columns:</label>
+                  <input type="number" value="3" min="3" max="40" id="cols">
+                </div>
+                <div class="bombs">
+                  <label class="lbl">Bombs:</label>
+                  <input type="number" value="1" min="1" max="1200" id="bombs">
+                </div>
+              </div>
+              <div class="btnContainer">
+                <button class="btnPlay" onclick="generate">Play!</button>
+              </div>
+              <div class="menuContinue" id="menuContinue"></div>
+              <div class="menuHighscores" id="menuHighscores"></div>
             </div>
           </div>
         </div>
@@ -145,5 +170,6 @@
   <script src="js/waves.js"></script>
   <script src="js/objects.js"></script>
   <script src="js/placeholder.js"> </script>
+  <script src="js/mijnveger.js"> </script>
   <script src="js/deepsea.js"> </script>
 </html>

@@ -1,4 +1,4 @@
-window.onload = function()
+window.addEventListener("load",()=>
     {
         var ocean = document.getElementById("een"),
             waveWidth = 10,
@@ -24,4 +24,4 @@ window.onload = function()
             }
 
         ocean.appendChild(docFrag);
-    }
+    })
