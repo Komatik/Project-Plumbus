@@ -1,11 +1,12 @@
 //window.onload = init;
 
+
 function init(){
     if(document.getElementById("content").childNodes[0]){ document.getElementById("content").removeChild(document.getElementById("content").childNodes[0]) }
     var newGame = new Board(10,10,10)
     newGame.create()
     createTable(newGame)
-} 
+}
 
 function createTable(boardObj){
     var table = document.createElement("table")

@@ -1,0 +1,19 @@
+#drie{
+    display:flex;
+}
+
+.container-left{
+    width:20vw;
+    height:100vh;
+}
+
+.container-right{
+    width:75vw;
+    height:100vh;
+}
+
+.menu{
+    width:600px;
+    height:600px;
+    background: url("../img/menubg.jpg");
+}

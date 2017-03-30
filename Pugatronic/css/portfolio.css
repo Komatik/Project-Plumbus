@@ -2,7 +2,7 @@
     display: flex;
     width: 100%;
     flex-direction: column;
-    border: solid 1px #fff;
+    border: solid 1px #ff0000;
 }
 
 .portfolio_list{
@@ -12,18 +12,15 @@
     color: #fff;
 }
 
-#twee{
-    list-style: none;
-    border: solid 1px #fff;
-}
-
 #twee label{
-    width: 100%;
-    padding: 5px;
+    width: 120%;
+    padding: 20px;
+    margin: 5px;
     display: flex;
+    font-size: 10px;
     flex-direction: row;
     justify-content: space-between;
-    border: solid 1px #fff;
+    /*border: solid 1px #fff;*/
 }
 
 #twee label a{
@@ -31,3 +28,10 @@
     color: #fff;
 }
 
+.icons > a{
+    font-size: 18px;
+}
+
+.icons > a >:hover{
+    color: lightblue
+}
