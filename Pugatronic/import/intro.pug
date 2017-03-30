@@ -1,6 +1,4 @@
 - var animatie = ['mine_een', 'mine_twee', 'mine_drie', 'mine_vier', 'mine_vijf', 'mine_zes', 'mine_zeven', 'mine_acht']; 
-- var anim;
-#sky
 //Mine opmaak
 .mine_container
     .mine_body_container
@@ -12,7 +10,11 @@
         .mine_spike_container(id=animatie[i])
             .mine_spike_base
             .mine_spike_cone
-            .mine_spike_nose.anim_een
+            - if(i % 2==0){
+                .mine_spike_nose.anim_een
+            - }else{
+                .mine_spike_nose.anim_twee
+            - }
     - }
 
 //Vis opmaak
