@@ -12,7 +12,11 @@
         .mine_spike_container(id=animatie[i])
             .mine_spike_base
             .mine_spike_cone
-            .mine_spike_nose.anim_een
+            - if(i*2==0){
+                .mine_spike_nose.anim_een
+            - }else{
+                .mine_spike_nose.anim_twee
+            - }
     - }
 
 //Vis opmaak

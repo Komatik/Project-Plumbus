@@ -44,19 +44,6 @@
     border: 10px white solid;
     background-color:black;
 }
-.vis_pupil{
-    position:absolute;
-    top:5px;
-    right:4px;
-    height:10;
-    width:10;
-    border-radius: 50%;
-    background-color:black;
-}
-
-.vis_mouth{
-    position:absolute;
-}
 
 .vis_beard{
     position:absolute;
@@ -76,7 +63,7 @@
     background-image: url(https://www.transparenttextures.com/patterns/arches.png);
     background-repeat: repeat;
     background-color:rgb(255, 0, 0);
-    border: 3px solid rgb(255, 60, 60);
+    border: 3px inset rgb(255, 60, 60);
     border-radius:50px;
     border-top-left-radius:60%;
     border-bottom-left-radius:40%;
@@ -86,7 +73,7 @@
     position:absolute;
     top:80px;
     left:60px;
-    border-bottom: 40px solid rgb(255, 60, 60);
+    border-bottom: 40px inset rgb(255, 60, 60);
 	border-left: 20px solid transparent;
 	border-right: 20px solid transparent;
 	height: 0;
@@ -98,7 +85,7 @@
     position:absolute;
     top:45px;
     left:20px;
-    border-left: 50px solid rgb(255, 60, 60);
+    border-left: 50px outset rgb(255, 60, 60);
 	border-top: 40px solid transparent;
 	border-bottom: 40px solid transparent;
     border-radius: 30px;
