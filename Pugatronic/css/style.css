@@ -9,7 +9,7 @@
     width:100%;
     top:0px;
     left:0px;
-    background: linear-gradient(0deg,rgb(0, 0, 50) 100vh,  rgb(0,50,150) 150vh, rgb(0,150,255))
+    background: linear-gradient(0deg,rgb(0, 0, 50) 100vh,  rgb(0,50,150) 150vh, rgb(0,150,255) 271vh, rgb(255, 255, 255) 272vh);
 }
 .container{
     height:100vh;
