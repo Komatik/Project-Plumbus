@@ -2,13 +2,14 @@
     display: flex;
     width: 100%;
     flex-direction: column;
-    border: solid 1px #ff0000;
+    /*border: solid 1px #ff0000;*/
 }
 
 #twee label{
+    position: relative;
     width: 50vw;
     padding: 20px;
-    margin: 5px;
+    margin: auto;
     display: flex;
     font-size: 10px;
     flex-direction: row;
@@ -22,8 +23,7 @@
     color: #fff;
 }
 #twee label:hover{
-    animation: pf_hover 1s ease-in-out infinite;
-    border: solid 1px #fff;
+
 }
 
 .icons > a{
@@ -31,9 +31,13 @@
 }
 
 .icons > a >:hover{
-    color: lightblue
+     color: lightblue 
 }
 
+canvas{ 
+    border: solid 1px #ff0000;
+    z-index: 10;
+}
 /*
     ========= KEYFRAMES =========
 */
