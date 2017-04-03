@@ -1,34 +1,103 @@
+/*All of the jellyfish*/
 .jelly_container{
     position:absolute;
     height:20vh;
     width:40vh;
-    border :2px black solid;
 }
+/*Jellyfish body*/
 .jelly_body_container{
     position:absolute;
     right:0vh;
     top:0vh;
     width:15vh;
     height: 20vh;
-    border: red 2px solid;
+    transform:perspective(200px);
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
     background-color: rgba(130, 130, 250, 0.4);
 }
-
+.jelly_inner_body{
+    position: absolute;
+    top:15%;
+    height: 70%;
+    width:90%;
+    right:5%;
+    border-top-right-radius:50%;
+    border-bottom-right-radius:50%;
+    background-color: rgba(130, 130, 250, 0.4);
+    animation-name:jellyBody;
+    animation-direction: alternate;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    filter: blur(0.5vh);
+}
+/*Jellyfish leg classes*/
 .jelly_legs_container{
     position:absolute;
     right: 15vh;
     top:0vh;
     width:25vh;
     height:20vh;
-    border: yellow solid 2px;
 }
 .jelly_leg{
-    position:absolute;
+    position:relative;
     right:0vh;
     top:0vh;
     width: 100%;
     height: 20%;
-    border:solid grey 2px;
+    margin:2.5%;
+}
+.jelly_leg_segment{
+    position:relative;
+    top:10%;
+    right:0vh;
+    float:right;
+    height:80%;
+    width:10%;
+    background-color:rgba(130, 130, 250, 0.4);
+    border-radius:50% 50%;
+    margin-right:-2%;
+}
+
+/*BOEBLEEEEEEE*/
+
+.jelly_bubble{
+    position:absolute;
+    background-color:rgba(100, 180, 255, 0.5);
+    border-radius:50%;
+    z-index:5;
+}
+.jelly_bubble_shine{
+    position:absolute;
+    top:5%;
+    left:30%;
+    width:40%;
+    height:10%;
+    border-radius:50%;
+    background-color:rgba(255, 255, 255, 0.7);
+    filter: blur(0.2vh);
+}
+.big{
+    top:50%;
+    right:15vh;
+    height:3vh;
+    width:3vh;
+    animation-name:floatBubblyFloat;
+    animation-duration: 8s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+}
+
+.small{
+    top:40%;
+    right:15vh;
+    height:1.5vh;
+    width:1.5vh;
+    animation-name:floatBubblyFloat;
+    animation-duration: 6s;
+    animation-delay: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
 }
