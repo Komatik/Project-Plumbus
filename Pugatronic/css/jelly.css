@@ -16,11 +16,19 @@
     background-color: rgba(130, 130, 250, 0.4);
 }
 
-.jelly_leg_container{
+.jelly_legs_container{
     position:absolute;
     right: 15vh;
     top:0vh;
     width:25vh;
     height:20vh;
     border: yellow solid 2px;
+}
+.jelly_leg{
+    position:absolute;
+    right:0vh;
+    top:0vh;
+    width: 100%;
+    height: 20%;
+    border:solid grey 2px;
 }
