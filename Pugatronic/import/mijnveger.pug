@@ -4,16 +4,10 @@
         .navbar
             .newGame#newGame 
                 h4.header New Game
-            .verLine
             .continue#continue
                 h4.header Continue
-            .verLine
-            .highscores#highscores
-                h4.header Highscores
-        .lines
-            #horLinenewGame
-            #horLinecontinue
-            #horLinehighscores
+            .highscores#highscores 
+                h4.header Highscores  
         .menuContent#menuContent
             .menuNewGame#menuNewGame
                 .newGameNav
@@ -27,6 +21,6 @@
                         label.lbl Bombs:
                         input(type="number" value="1" min="1" max="1200")#bombs
                 .btnContainer
-                    button(onclick="generate").btnPlay Play!
+                    a(href="#" class="btnplay generate")
             .menuContinue#menuContinue
             .menuHighscores#menuHighscores
