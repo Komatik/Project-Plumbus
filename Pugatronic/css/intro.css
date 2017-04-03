@@ -162,11 +162,12 @@
     opacity: 0;
     position:absolute;
     top:50vh;
-    left:-20%;
+    left:-20vw;
     height:20vh;
     animation-name: turn, moveSpongebob;
-    animation-duration: 3s, 12s;
+    animation-duration: 3s, 25s;
     animation-iteration-count: infinite, 1;
+    animation-delay:0s, 20s;
     z-index:4
 }
 
@@ -181,11 +182,11 @@
 
 @keyframes moveSpongebob{
     from{
-        opacity:1;
-        left:-20%;
+        opacity:0.7;
+        left:-20vw;
     }
     to{
-        opacity: 1;
-        left:120%;
+        opacity:0.7;
+        left:120vw;
     }
 }
