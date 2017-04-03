@@ -1,35 +1,37 @@
 - var animatie = ['mine_een', 'mine_twee', 'mine_drie', 'mine_vier', 'mine_vijf', 'mine_zes', 'mine_zeven', 'mine_acht']; 
 //Mine opmaak
 img#easter(src="img/spongeboebel.png")
-.mine_container
-    .mine_body_container
-        .mine_body_outer
-        .mine_body_outer_eye
-        .mine_body_inner_eye
-            .mine_body_inner_eye_shine
-    - for(var i = 0; i < 8; i++){
-        .mine_spike_container(id=animatie[i])
-            .mine_spike_base
-            .mine_spike_cone
-            - if(i % 2==0){
-                .mine_spike_nose.anim_een
-            - }else{
-                .mine_spike_nose.anim_twee
-            - }
-    - }
+a(href="#drie").scroll
+    .mine_container
+        .mine_body_container
+            .mine_body_outer
+            .mine_body_outer_eye
+            .mine_body_inner_eye
+                .mine_body_inner_eye_shine
+        - for(var i = 0; i < 8; i++){
+            .mine_spike_container(id=animatie[i])
+                .mine_spike_base
+                .mine_spike_cone
+                - if(i % 2==0){
+                    .mine_spike_nose.anim_een
+                - }else{
+                    .mine_spike_nose.anim_twee
+                - }
+        - }
 
 //Vis opmaak
-.vis_container
-    .vis_head
-        .vis_eye.blink
-        .vis_eye2.blink2
-        .vis_mouth
-    img(src="img/beard.png" class="vis_beard")
-    .vis_upper_fin
-    .vis_body
-        .vis_side_fin.fin1
-    .vis_tail.fin2
-    .bubble.big
-    .bubble.big2
-    .bubble.small
+a(href="#twee").scroll
+    .vis_container
+        .vis_head
+            .vis_eye.blink
+            .vis_eye2.blink2
+            .vis_mouth
+        img(src="img/beard.png" class="vis_beard")
+        .vis_upper_fin
+        .vis_body
+            .vis_side_fin.fin1
+        .vis_tail.fin2
+        .bubble.big
+        .bubble.big2
+        .bubble.small
 

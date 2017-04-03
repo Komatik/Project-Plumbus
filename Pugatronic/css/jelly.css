@@ -1,0 +1,34 @@
+.jelly_container{
+    position:absolute;
+    height:20vh;
+    width:40vh;
+    border :2px black solid;
+}
+.jelly_body_container{
+    position:absolute;
+    right:0vh;
+    top:0vh;
+    width:15vh;
+    height: 20vh;
+    border: red 2px solid;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    background-color: rgba(130, 130, 250, 0.4);
+}
+
+.jelly_legs_container{
+    position:absolute;
+    right: 15vh;
+    top:0vh;
+    width:25vh;
+    height:20vh;
+    border: yellow solid 2px;
+}
+.jelly_leg{
+    position:absolute;
+    right:0vh;
+    top:0vh;
+    width: 100%;
+    height: 20%;
+    border:solid grey 2px;
+}
