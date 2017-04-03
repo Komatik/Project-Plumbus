@@ -19,7 +19,7 @@ function clicked(node){
     }
 }
 
-function generate(){}
+function generate(){ console.log("jep") }
 
 function selectTab(node){
     for(nodeName in active){

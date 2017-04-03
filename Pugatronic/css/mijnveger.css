@@ -1,29 +1,71 @@
 #drie{
     display:flex;
     width:100%;
+    overflow:hidden;
 }
 
 #drie .container-left{
-    width:20%;
+    width:250px;
     height:100vh;
 }
 
+#drie .container-left .container-left-top{
+    width:250px;
+    height:80%;
+}
+
+#drie .container-left .container-left-bottom{
+    width:250px;
+    height:20%;
+    position:absolute;
+    left:0;
+    bottom:0;
+}
+
+.sub{
+    width:1635px;
+    height:357px;
+    background:url("../img/sub.png") no-repeat;
+    background-size:contain;
+    left:-286px;
+    bottom:98.3px;
+    position: absolute;
+    transform: rotate(-23deg);
+}
+
+.sublight{
+    background: -moz-radial-gradient(50% -50%, cover, #2989d8 0%, #207cca 35%, rgb(0, 0, 50) 55%, rgb(0, 0, 50) 100%);
+    background: -webkit-radial-gradient(50% -50%, cover, #2989d8 0%, #207cca 35%, rgb(0, 0, 50) 55%, rgb(0, 0, 50) 100%);
+    background: -ms-radial-gradient(50% -50%, cover, #2989d8 0%, #207cca 35%, rgb(0, 0, 50) 55%, rgb(0, 0, 50) 100%);
+    background: -o-radial-gradient(50% -50%, cover, #2989d8 0%, #207cca 35%, rgb(0, 0, 50) 55%, rgb(0, 0, 50) 100%);
+    background: radial-gradient(50% -50%, cover, #2989d8 0%, #207cca 35%, rgb(0, 0, 50) 55%, rgb(0, 0, 50) 100%);
+    width:981px;
+    height:697px;
+    position: absolute;
+    transform: rotate(62deg);
+    left:-263px;
+    bottom:-50px;
+}
+
 #drie .container-right{
-    width:80%;
+    width:800px;
     height:100vh;
     display:flex;
 }
 
 #drie .container-right .menu{
-    width:65%;
-    height:70%;
-    margin:auto;
+    width:600px;
+    height:625px;
+    margin-bottom:130px;
+    margin-left:120px;
+    margin-top:auto;
     background: #1e5799; /* Old browsers */
     background: -moz-linear-gradient(-45deg, #1e5799 0%, #207cca 47%, #207cca 47%, #2989d8 60%, #7db9e8 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(-45deg, #1e5799 0%,#207cca 47%,#207cca 47%,#2989d8 60%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(135deg, #1e5799 0%,#207cca 47%,#207cca 47%,#2989d8 60%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     border-radius: 40px;
     box-shadow: 0px 0px 10px 5px #144987;
+    position:relative;
 }
 
 #drie .container-right .menu .navbar, .newGameNav{
@@ -116,15 +158,16 @@ input[type=number]{
 .btnplay{
     background-image: -webkit-linear-gradient(top, #f4f1ee, #fff);
     background-image: linear-gradient(top, #f4f1ee, #fff);
-    border-radius: 50%;
+    border-radius: 35px;
     box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204,198,197,.5);
     float:left;
     height: 70px;
-    margin: 0 30px 30px 0;
+    margin:auto;
     position: relative;
-    width: 70px;			
+    width: 180px;			
     -webkit-transition: all .1s linear;
     transition: all .1s linear;
+    cursor: pointer;
 }
 
 .btnplay:after{
@@ -137,11 +180,12 @@ input[type=number]{
     text-shadow: 0px -1px 1px #bdb5b4, 1px 1px 1px white;
     position: absolute;
     width: 30px;
+    cursor: pointer;
 }
 
 
-.heart:after{
-    content: "❤";
+.generate:after{
+    content: "Generate";
     left: 21px;
     top: 16px;
 }
@@ -152,9 +196,9 @@ input[type=number]{
     color:#0088cc;
 }
 
-.heart:hover:after{
-    color:#f94e66;
-    text-shadow:0px 0px 6px #f94e66;
+.generate:hover:after{
+    color:#1064ea;
+    text-shadow:0px 0px 6px #1064ea;
 }
 
 .btnplay:active{
