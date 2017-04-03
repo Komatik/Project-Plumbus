@@ -51,6 +51,7 @@
     width:800px;
     height:100vh;
     display:flex;
+    z-index:2;
 }
 
 #drie .container-right .menu{
@@ -210,4 +211,37 @@ input[type=number]{
 .btnplay:active:after{
     color:#dbd2d2;
     text-shadow: 0px -1px 1px #bdb5b4, 0px 1px 1px white;
+}
+
+#error{
+    font-weight:bold;
+    color:red;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.gone{
+    display: none;
+}
+
+#mineSweeperTable{
+    width:600px;
+    height:625px;
+    margin-bottom:130px;
+    margin-left:120px;
+    margin-top:auto;
+    background: #144987; 
+    box-shadow: 0px 0px 10px 5px #144987;
+    position:relative;
+    border-spacing: 0px;
+}
+
+#mineSweeperTable td{
+    background: #207cca;
+    border:1px solid #1f3860;
+    width:20px;
+    height:20px;
+    text-align: center;
 }
