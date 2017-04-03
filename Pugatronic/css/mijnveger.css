@@ -91,11 +91,6 @@ input[type=number]{
     height:30px;
     font-family: 'PT Mono', monospace;
 }
-.btnPlay{
-    width:150px;
-    height:60px;
-    margin:auto;
-}
 
 .lbl{
     font-family: 'PT Mono', monospace;
@@ -118,7 +113,7 @@ input[type=number]{
     flex-direction: column;
 }
 
-.button{
+.btnplay{
     background-image: -webkit-linear-gradient(top, #f4f1ee, #fff);
     background-image: linear-gradient(top, #f4f1ee, #fff);
     border-radius: 50%;
@@ -132,7 +127,7 @@ input[type=number]{
     transition: all .1s linear;
 }
 
-.button:after{
+.btnplay:after{
     color:#e9e6e4;
     content: "";
     display: block;
@@ -151,7 +146,7 @@ input[type=number]{
     top: 16px;
 }
 
-.button:hover{
+.btnplay:hover{
     background-image: -webkit-linear-gradient(top, #fff, #f4f1ee);
     background-image: linear-gradient(top, #fff, #f4f1ee);
     color:#0088cc;
@@ -162,13 +157,13 @@ input[type=number]{
     text-shadow:0px 0px 6px #f94e66;
 }
 
-.button:active{
+.btnplay:active{
     background-image: -webkit-linear-gradient(top, #efedec, #f7f4f4);
     background-image: linear-gradient(top, #efedec, #f7f4f4);
     box-shadow: 0 3px 5px 0 rgba(0,0,0,.4), inset 0px -3px 1px 1px rgba(204,198,197,.5);
 }
 
-.button:active:after{
+.btnplay:active:after{
     color:#dbd2d2;
     text-shadow: 0px -1px 1px #bdb5b4, 0px 1px 1px white;
 }
