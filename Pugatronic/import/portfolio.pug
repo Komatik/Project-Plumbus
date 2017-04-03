@@ -9,3 +9,22 @@ each val in ['wouter cox', 'Hans Hendrickx', 'Iwan Kimpe', 'Steven Leysen', 'Pet
                     i(class="fa fa-cloud-download" aria-hidden="true")
                 a(href='#')
                     i(class="fa fa-user" aria-hidden="true")
+
+
+<!--Kwallemaar-->
+- var leggies = ['een', 'twee', 'drie', 'vier', 'vijf', 'zes', 'zeven', 'acht', 'negen', 'tien', 'elf']
+- for (var k = 0; k < 3; k++){
+    .jelly_container(id="kwal_"+leggies[k])
+        .jelly_bubble.jelly_big
+            .jelly_bubble_shine
+        .jelly_bubble.jelly_small
+            .jelly_bubble_shine
+        .jelly_body_container
+            .jelly_inner_body
+        .jelly_legs_container
+            
+            - for (var i = 0; i < 4; i++){
+                .jelly_leg
+                    -for (var l = 0; l < leggies.length; l++){
+                        .jelly_leg_segment(class= "jelly_anim_" + leggies[l])
+- }}}
