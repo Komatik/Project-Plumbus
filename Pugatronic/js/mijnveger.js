@@ -7,7 +7,6 @@ function menu(){
         document.getElementById(nodeName).onclick = ()=>{clicked(event.currentTarget)}
         if(nodeName!="newGame"){
             document.getElementById(nodeName).style.background="#144987"
-            document.getElementById("horLine" + nodeName).style.background="#092647"
         }
     }
     highlight("continue")
@@ -25,21 +24,12 @@ function generate(){}
 function selectTab(node){
     for(nodeName in active){
         active[nodeName]=false;
-        document.getElementById(nodeName).style.background="#144987"
+        document.getElementById(nodeName).style="background:#144987;border-bottom:2px solid #092647"
         highlight(nodeName)
-        document.getElementById("horLine" + nodeName).style.background="#092647"
-        if(node.id=="continue"&&nodeName!="continue"){
-            document.getElementById("horLine" + nodeName).style.width="33.5%"
-            document.getElementById("horLinecontinue").style.width="33%"
-        } else{
-            document.getElementById("horLine" + nodeName).style.width="33%"
-            document.getElementById("horLinecontinue").style.width="34%"
-        }
     };
     active[node.id]=true;
-    node.style.background="";
+    node.style="background:;border-bottom:0px";
     node.removeEventListener("mouseenter",classAdd)
-    document.getElementById("horLine" + node.id).style.background=""
 }
 
 function highlight(nodeName){
