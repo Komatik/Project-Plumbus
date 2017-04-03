@@ -10,7 +10,7 @@ function Dinge(column, row, parent, bomb){
 
 Dinge.prototype.clicked = function(field)
     {   
-        if(this.flagged==""){
+        if(this.flagged===""){
             if(this.parent.time==0){ this.parent.start() }
             if (this.bomb)
                 {
@@ -50,9 +50,9 @@ function Board(cols, rows, bombs){
     this.rows = rows,
     this.bombs = bombs,
     this.time = 0,
-    this.start = ()=>{this.interval = setInterval(()=>{this.time+=0.1},100)}
-    this.interval
-    this.stop = ()=>{clearInterval(this.interval)}
+    this.start = ()=>{this.interval = setInterval(()=>{this.time+=0.1},100)},
+    this.interval,
+    this.stop = ()=>{clearInterval(this.interval)},
     this.bombCount = bombs,
     this.field = new Array(this.cols);
     this.create = function(){
