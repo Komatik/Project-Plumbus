@@ -59,8 +59,13 @@ function checkValues(){
     }   
     document.getElementById("error").className = "hidden"
     document.getElementById("menu").className+=" gone";
-    document.getElementById("menuLeft").className=""
-    document.getElementById("menuLeft").className+="menuLeft"
+    document.getElementById("menuLeft").className="menuLeft"
     init(rows,cols,bombs)
     return false
+}
+
+function backToMenu(){
+    document.getElementById("menuLeft").className+=" hidden"
+    document.getElementById("container-right").removeChild(document.getElementById("container-right").childNodes[2])
+    document.getElementById("menu").className="menu"
 }
