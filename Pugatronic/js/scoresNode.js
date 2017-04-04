@@ -14,7 +14,11 @@ server.all('/name/:name', function(req, res){
 server.all('/top/:start/:filter/:amount', function (req, res){
 });
 server.all('/invoegen/:naam/:tijd/:difficulty', function(req,res){
-    mongo.collection(collection).insertOne()
+    mongo.collection(collection).insertOne({
+        'naam': req.params['naam'],
+        'time':req.params['tijd'],
+        'grade':req.params['difficulty']
+    });
 });
 server.all('/', function(req, res){
 
