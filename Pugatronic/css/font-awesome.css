@@ -2340,3 +2340,8 @@
     font-family: fipps;
     src: url("../fonts/Fipps-Regular.otf") format("opentype");
 }
+
+@font-face {
+    font-family: sevenSegment;
+    src: url("../fonts/digital-7.ttf") format("truetype");
+}

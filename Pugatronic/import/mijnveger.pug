@@ -1,9 +1,11 @@
 .container-left
     .container-left-top
-        a(onclick="init()" class="btnplay newGameBtn")
-    .container-left-bottom
-        .sublight#light
-        .sub
+        #menuLeft.menuLeft.hidden
+            .timer
+                .time#time 0.0
+            .bombsAmount
+            .btnContainer
+                a(onclick="init()" class="btnplay newGameBtn") 
 .container-right#container-right
     .menu#menu
         .navbar
@@ -32,5 +34,8 @@
             .menuHighscores#menuHighscores 
 .floor_container
     .floor#floor_een
+    .container-left-bottom
+        .sublight#light
+        .sub
     .floor#floor_twee
     img#beach_walk(src="https://68.media.tumblr.com/75beab408ae221ae3c6214a4f4ac3ccb/tumblr_nxhhg5lcE61qkuwvto1_400.gif")

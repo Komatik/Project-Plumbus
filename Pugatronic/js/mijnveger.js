@@ -59,6 +59,8 @@ function checkValues(){
     }   
     document.getElementById("error").className = "hidden"
     document.getElementById("menu").className+=" gone";
+    document.getElementById("menuLeft").className=""
+    document.getElementById("menuLeft").className+="menuLeft"
     init(rows,cols,bombs)
     return false
 }
