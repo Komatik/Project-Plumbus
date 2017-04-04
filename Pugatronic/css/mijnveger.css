@@ -7,11 +7,42 @@
 #drie .container-left{
     width:250px;
     height:100vh;
+    z-index: 3;
 }
 
 #drie .container-left .container-left-top{
     width:250px;
     height:80%;
+}
+
+.menuLeft{
+    width:250px;
+    height:400px;
+    margin-top:40px;
+    background: #1e5799; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #1e5799 0%, #207cca 47%, #207cca 47%, #2989d8 60%, #7db9e8 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #1e5799 0%,#207cca 47%,#207cca 47%,#2989d8 60%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #1e5799 0%,#207cca 47%,#207cca 47%,#2989d8 60%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    border-radius: 40px;
+    box-shadow: 0px 0px 10px 5px #144987;
+}
+
+.bombsAmount, .timer{
+    width:100%;
+    height: 150px;
+    display:flex;
+}
+
+.time{
+    margin:auto;
+    font-family: sevenSegment;
+    font-size:4em;
+    color:lawngreen;
+    background: black;
+    border:2px outset lawngreen;
+    border-radius: 5px;
+    min-width:170px;
+    text-align: center;
 }
 
 #drie .container-left .container-left-bottom{
@@ -31,6 +62,7 @@
     bottom:98.3px;
     position: absolute;
     transform: rotate(-23deg);
+    z-index: 2;
 }
 
 .sublight{
@@ -57,7 +89,7 @@
 #drie .container-right .menu{
     width:600px;
     height:625px;
-    margin-bottom:130px;
+    margin-bottom:180px;
     margin-left:120px;
     margin-top:auto;
     background: #1e5799; /* Old browsers */
@@ -180,13 +212,12 @@ input[type=number]{
     text-decoration: none;
     text-shadow: 0px -1px 1px #bdb5b4, 1px 1px 1px white;
     position: absolute;
-    width: 30px;
+    width: 200px;
     cursor: pointer;
 }
 
 .newGameBtn{
-    height:100px;
-    width: 130px;
+    width:200px;
 }
 
 .generate:after{
@@ -239,7 +270,7 @@ input[type=number]{
 #mineSweeperTable{
     width:600px;
     height:625px;
-    margin-bottom:130px;
+    margin-bottom:180px;
     margin-left:120px;
     margin-top:auto;
     background: #144987; 

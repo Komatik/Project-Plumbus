@@ -32,7 +32,9 @@ function testValues(boardObj){
         selObj = boardObj.field[event.target.parentNode.rowIndex][event.target.cellIndex]
 
     if(boardObj.time==0){
-        //time = setInterval(()=>{document.getElementById("timer").innerText=Math.round(boardObj.time*10)/10},49)
+        time = setInterval(()=>{
+                document.getElementById("time").innerText=Math.round(boardObj.time*10)/10
+        },49)
     }
     if(event.button==0){
         var val = selObj.clicked(boardObj.field) 
