@@ -286,3 +286,41 @@ input[type=number]{
     height:20px;
     text-align: center;
 }
+
+.bombsAmount{
+    flex-direction: column;
+}
+
+.bombsAmountText{
+    font-family: 'PT Mono', monospace;
+    font-weight:bold;
+    font-size:1.5em;
+    margin:20px auto 0px auto;
+}
+
+.bombsAmountNrContainer{
+    width:100%;
+    height:30%;
+    display: flex;
+    margin-bottom: auto;
+}
+
+.bombsAmountImg{
+    width:45px;
+    height:45px;
+    background:url(../img/bom.png) 50% 50% / contain no-repeat;
+    margin-left:auto;
+}
+
+.bombsAmountNr{
+    width:50%;
+    height: 100%;
+    display:flex;
+}
+
+.bombsAmountNrText{
+    font-family: 'PT Mono', monospace;
+    font-weight:bold;
+    font-size:1.5em;
+    margin:auto auto 4px 0px;
+}

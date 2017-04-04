@@ -3,7 +3,12 @@
         #menuLeft.menuLeft.hidden
             .timer
                 .time#time 0.0
-            .bombsAmount
+            .bombsAmount 
+                .bombsAmountText Bombs left:
+                .bombsAmountNrContainer
+                    .bombsAmountImg
+                    .bombsAmountNr 
+                        .bombsAmountNrText#bombsAmount
             .btnContainer
                 a(onclick="init()" class="btnplay newGameBtn") 
 .container-right#container-right
@@ -20,13 +25,13 @@
                 .newGameNav
                     .rows
                         label.lbl Rows:
-                        input(type="number" value="10" min="3" max="40")#rows
+                        input(type="number" value="10" min="3" max="30")#rows
                     .cols
                         label.lbl Columns:
-                        input(type="number" value="10" min="3" max="40")#cols
+                        input(type="number" value="10" min="3" max="30")#cols
                     .bombs
                         label.lbl Bombs:
-                        input(type="number" value="10" min="1" max="1200")#bombs
+                        input(type="number" value="10" min="1" max="800")#bombs
                 #error.hidden
                 .btnContainer
                     a(onclick="generate()" class="btnplay generate")
