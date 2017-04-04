@@ -329,8 +329,16 @@
               <div class="timer">
                 <div class="time" id="time">0.0</div>
               </div>
-              <div class="bombsAmount"></div>
-              <div class="btnContainer"><a class="btnplay newGameBtn" onclick="init()"> </a></div>
+              <div class="bombsAmount"> 
+                <div class="bombsAmountText">Bombs left:</div>
+                <div class="bombsAmountNrContainer">
+                  <div class="bombsAmountImg"></div>
+                  <div class="bombsAmountNr"> 
+                    <div class="bombsAmountNrText" id="bombsAmount"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="btnContainer"><a class="btnplay menuBtn" onclick="backToMenu()"></a><a class="btnplay newGameBtn" onclick="init()"> </a></div>
             </div>
           </div>
         </div>
@@ -352,15 +360,15 @@
                 <div class="newGameNav">
                   <div class="rows">
                     <label class="lbl">Rows:</label>
-                    <input type="number" value="10" min="3" max="40" id="rows">
+                    <input type="number" value="10" min="3" max="30" id="rows">
                   </div>
                   <div class="cols">
                     <label class="lbl">Columns:</label>
-                    <input type="number" value="10" min="3" max="40" id="cols">
+                    <input type="number" value="10" min="3" max="30" id="cols">
                   </div>
                   <div class="bombs">
                     <label class="lbl">Bombs:</label>
-                    <input type="number" value="10" min="1" max="1200" id="bombs">
+                    <input type="number" value="10" min="1" max="800" id="bombs">
                   </div>
                 </div>
                 <div class="hidden" id="error"></div>

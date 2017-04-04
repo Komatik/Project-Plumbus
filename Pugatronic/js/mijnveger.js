@@ -52,15 +52,20 @@ function checkValues(){
     var bombs=document.getElementById("bombs").value
 
     switch(true){
-        case(rows<3||rows>40):return "The amount of rows needs to be between min. 3 and max. 40!";
-        case(cols<3||cols>40):return "The amount of columns needs to be between min. 3 and max. 40!";
-        case(bombs<1||bombs>1200):return "The amount of bombs needs to be between min. 1 and max. 1200!";
+        case(rows<3||rows>30):return "The amount of rows needs to be between min. 3 and max. 40!";
+        case(cols<3||cols>30):return "The amount of columns needs to be between min. 3 and max. 40!";
+        case(bombs<1||bombs>800):return "The amount of bombs needs to be between min. 1 and max. 1200!";
         case(rows*cols<=bombs):return "There are too many bombs for the amount of squares!";
     }   
     document.getElementById("error").className = "hidden"
     document.getElementById("menu").className+=" gone";
-    document.getElementById("menuLeft").className=""
-    document.getElementById("menuLeft").className+="menuLeft"
+    document.getElementById("menuLeft").className="menuLeft"
     init(rows,cols,bombs)
     return false
+}
+
+function backToMenu(){
+    document.getElementById("menuLeft").className+=" hidden"
+    document.getElementById("container-right").removeChild(document.getElementById("container-right").childNodes[2])
+    document.getElementById("menu").className="menu"
 }
