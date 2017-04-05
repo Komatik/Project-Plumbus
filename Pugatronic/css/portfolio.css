@@ -36,10 +36,13 @@
 }
 
 canvas{ 
-    border: solid 1px #ff0000;
-    z-index: 10;
+    z-index: 0;
 }
 
+
+/*
+    - kwal
+*/
 #kwal_een{
     top:10vh;
     left:-40vh;
