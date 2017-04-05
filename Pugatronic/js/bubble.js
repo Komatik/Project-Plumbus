@@ -6,7 +6,7 @@ var ctx = canvas.getContext('2d');
 
 // temporary settings
 canvas.style.position = 'absolute';
-canvas.width = window.innerWidth;
+canvas.width = window.innerWidth - 20;
 canvas.height = window.innerHeight * 3;
 
 // js obj
@@ -35,9 +35,10 @@ Bubble.prototype.drawBubble = function () {
 
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.s, 0, 2 * Math.PI);
-    //ctx.fillStyle = 'rgba(255, 255, 255, 0.3)'
-    ctx.strokeStyle = '#fff'
-    ctx.stroke();
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.3)'
+    ctx.fill();
+    //ctx.strokeStyle = '#fff'
+    //ctx.stroke();
     ctx.closePath();
 
 } // end drawBubble
