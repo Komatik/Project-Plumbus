@@ -384,27 +384,31 @@
               </div>
               <div class="menuHighscores" id="menuHighscores"> 
                 <div id="highscoreGameContainer">
-                  <!-- search name, config, time, enter-->
-                  <!-- text, dropdown, plane, btn-->
-                  <table>
+                  <table colspan="0" rowspan="0">
                     <th>
                       <td>
                         <input type="text" id="spelerNaam" placeholder="speler naam">
                       </td>
                       <td>
-                        <select id="spelerConfig"></select>
+                        <select id="spelerConfig">
+                          <option value="0">-- configuratie --</option>
+                          <option value="3x3">3 x 3</option>
+                          <option value="5x5">5 x 5</option>
+                          <option value="10x10">10 x 10</option>
+                        </select>
                       </td>
                       <td>
                         <input type="button" id="zoeken" value="zoek">
                       </td>
                     </th>
                   </table>
-                  <table>
-                    <th>
-                      <td>Speler</td>
-                      <td>Configuratie</td>
-                      <td>Tijd</td>
-                    </th>
+                  <table colspan="0" rowspan="0" border="0">
+                    <thead>
+                      <th>Speler</th>
+                      <th>Configuratie</th>
+                      <th>Tijd</th>
+                    </thead>
+                    <tbody id="highscoresTable"></tbody>
                   </table>
                 </div>
               </div>
@@ -429,5 +433,5 @@
   <script src="js/mijnveger.js"> </script>
   <script src="js/smoothscroll.js"></script>
   <script src="js/tabs.js"></script>
-  <!--script(src="js/bubble.js")-->
+  <script src="js/bubble.js"></script>
 </html>

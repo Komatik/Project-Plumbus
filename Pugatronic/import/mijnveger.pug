@@ -44,21 +44,24 @@
                     a( id="continue" class="btnplay hervatten" )
             .menuHighscores#menuHighscores 
                 #highscoreGameContainer
-                    // search name, config, time, enter
-                    // text, dropdown, plane, btn
-                    table
+                    table(colspan="0" rowspan="0")
                         th
                             td
                                 input( type="text" id="spelerNaam" placeholder="speler naam" )
                             td
                                 select( id="spelerConfig" )
+                                    option(value="0") -- configuratie --
+                                    option(value="3x3") 3 x 3
+                                    option(value="5x5") 5 x 5
+                                    option(value="10x10") 10 x 10
                             td
                               input( type="button" id="zoeken" value="zoek"  )  
-                    table
-                        th
-                            td Speler
-                            td Configuratie
-                            td Tijd
+                    table(colspan="0" rowspan="0" border="0")
+                        thead
+                            th Speler
+                            th Configuratie
+                            th Tijd
+                        tbody(id="highscoresTable")
                         
 
 .floor_container

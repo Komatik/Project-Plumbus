@@ -18,16 +18,16 @@ function Bubble( x, y, s ) {
     var self = this;
     
     setInterval( function(){
-        if (self.y > 0){
+        if (self.y > 300){
             self.y--;
         }
         else{
             self.s = Math.floor( Math.random() * 50 );
-            self.y = canvas.offsetHeight + 500;
+            self.y = canvas.offsetHeight + 100;
             self.x = Math.floor( Math.random() * canvas.offsetWidth + 1 )
         }
         update();
-    }, Math.floor(Math.random() * ( self.s > 100 ? 1000  : 50  ) ));
+    }, Math.floor(Math.random() * ( self.s > 10 ? 100  : 50  ) ));
     
 }
 
@@ -37,8 +37,8 @@ Bubble.prototype.drawBubble = function () {
     ctx.arc(this.x, this.y, this.s, 0, 2 * Math.PI);
     ctx.fillStyle = 'rgba(255, 255, 255, 0.3)'
     ctx.fill();
-    //ctx.strokeStyle = '#fff'
-    //ctx.stroke();
+    ctx.strokeStyle = '#fff'
+    ctx.stroke();
     ctx.closePath();
 
 } // end drawBubble
@@ -47,7 +47,7 @@ var bubbles = []
 
 for( var i = 0; i < 15; i++ ){
     var rx = Math.floor( Math.random() * canvas.offsetWidth + 1 );
-    var ry =  Math.floor( canvas.offsetHeight + (Math.random()* 900) );
+    var ry =  Math.floor( Math.random() * canvas.offsetHeight );
     var rs = Math.floor( Math.random() * 50 )
     bubbles.push(
         new Bubble( rx, ry, rs )

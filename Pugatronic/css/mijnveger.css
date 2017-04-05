@@ -354,7 +354,7 @@ input[type=number]{
 */
 
 #menuContinue, #menuHighscores{
-    display: none
+    display: none;
 }
 
 
@@ -370,6 +370,7 @@ input[type=number]{
     display: flex;
     flex-direction: column;
 }
+
 #title{
     font-size: 18px;
     font-weight: bold;
@@ -387,26 +388,55 @@ input[type=number]{
 /*
     * highscores - tab
 */
-
+table{
+    border-collapse: collapse;
+}
 #highscoreGameContainer{
     margin: auto;
     padding: 10%;
 }
 
 #highscoreGameContainer table:nth-child(1){
-    margin: 0 0 10px 0;
+    margin: 0 0 20px 0;
 }
 #highscoreGameContainer table:nth-child(2){
     width: 100%;
     color: #fff;
 }
-#highscoreGameContainer table:nth-child(2){
+
+
+#highscoreGameContainer table:nth-child(2) {
     font-weight: bold;
 }
 
-
+#highscoreGameContainer thead th{
+    text-align:  center;
+    height: 100px
+}
 
 
 input, select {
     padding: 5px;
+    text-align: center;
+    
+}
+#highscoresTable{
+    text-align: center;
+}
+
+#highscoresTable tr td{
+    width: 50%;
+    padding: 10px;
+    text-transform: capitalize;
+    border-bottom: solid 1px  rgba( 255, 255, 255, 0.5 );
+}
+
+#highscoresTable tr:nth-child(1){
+    background:gold;
+}
+#highscoresTable tr:nth-child(2){
+    background: #eee;
+}
+#highscoresTable tr:nth-child(3){
+    background: sandybrown;
 }
