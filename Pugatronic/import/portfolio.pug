@@ -1,14 +1,15 @@
-each val in ['wouter cox', 'Hans Hendrickx', 'Iwan Kimpe', 'Steven Leysen', 'Peter Melis', 'Kevin Olzack', 'Senne Peeters', 'Samir Sebaoui', 'Jeroen Van Hoof', 'Max Verheyen', 'Yoram Vleugels']
-    label(for=val) 
-        a(href="#")
-            h3 #{ val }
-            .icons
-                a(href='#')
-                    i(class="fa fa-linkedin" aria-hidden="true")
-                a(href='#')
-                    i(class="fa fa-cloud-download" aria-hidden="true")
-                a(href='#')
-                    i(class="fa fa-user" aria-hidden="true")
+- var klas = [['wouter cox', 'https://www.linkedin.com/in/woutercox/', '#', 'http://www.coxwouter.be/'],['Hans Hendrickx', 'https://www.linkedin.com/in/hans-hendrickx-a0b1b9139/', 'https://drive.google.com/drive/folders/0B0Iws6EdKrZWeEZ5LUU4UTNfTnc', 'http://hahendesign.com/'],['Iwan Kimpe', 'https://be.linkedin.com/in/iwankimpe', '#', '#'],['Steven Leysen', 'https://www.linkedin.com/in/steven-j-b-leysen-7a4755140/', '#', '#'],['Peter Melis', 'https://www.linkedin.com/in/peter-melis-754755140/', '#', '#'],['Kevin Olzack', '#', '#', '#'],['Senne Peeters', 'https://www.linkedin.com/in/senne-peeters-484b9913b/', 'https://drive.google.com/file/d/0B2MUgIPSzmYacFZWLXhqZHcwS1E/view', '#'],['Samir Sebaoui', 'https://www.linkedin.com/in/samir-sebaoui-78ab88b4/', 'https://drive.google.com/open?id=0BweFJD3l-3AHQk55dVRuX1E4TTg', '#'],['Jeroen Van Hoof', 'https://www.linkedin.com/in/jeroen-v-640755140/', 'https://drive.google.com/open?id=0B_8LuOO-kDG8dDlSUGVGM1htNnc', '#'],['Max Verheyen', '#', '#', '#'],['Yoram Vleugels', '#', '#', '#']]
+- for( var i = 0; i < klas.length; i++){
+    label
+        h3=klas[ i ][ 0 ]
+        .icons
+            a(href=klas[ i ][ 1 ])
+                i(class="fa fa-linkedin" aria-hidden="true")
+            a(href=klas[ i ][ 2 ])
+                i(class="fa fa-cloud-download" aria-hidden="true")
+            a(href=klas[ i ][ 3 ])
+                i(class="fa fa-user" aria-hidden="true")
+- }
 
 
 <!--Kwallemaar-->
