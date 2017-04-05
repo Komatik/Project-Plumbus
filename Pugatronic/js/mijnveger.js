@@ -19,7 +19,13 @@ function clicked(node){
     }
 }
 
-function generate(){ console.log("jep") }
+function generate(){ 
+    var check = checkValues()
+    if(check){
+        document.getElementById("error").innerHTML = check
+        document.getElementById("error").className = ""
+    } 
+ }
 
 function selectTab(node){
     for(nodeName in active){
@@ -39,3 +45,27 @@ function highlight(nodeName){
 
 function classAdd(){event.currentTarget.className+=" hover"}
 function classRemove(){event.currentTarget.className = event.currentTarget.id}
+
+function checkValues(){
+    var rows=document.getElementById("rows").value
+    var cols=document.getElementById("cols").value
+    var bombs=document.getElementById("bombs").value
+
+    switch(true){
+        case(rows<3||rows>30):return "The amount of rows needs to be between min. 3 and max. 40!";
+        case(cols<3||cols>30):return "The amount of columns needs to be between min. 3 and max. 40!";
+        case(bombs<1||bombs>800):return "The amount of bombs needs to be between min. 1 and max. 1200!";
+        case(rows*cols<=bombs):return "There are too many bombs for the amount of squares!";
+    }   
+    document.getElementById("error").className = "hidden"
+    document.getElementById("menu").className+=" gone";
+    document.getElementById("menuLeft").className="menuLeft"
+    init(rows,cols,bombs)
+    return false
+}
+
+function backToMenu(){
+    document.getElementById("menuLeft").className+=" hidden"
+    document.getElementById("container-right").removeChild(document.getElementById("container-right").childNodes[2])
+    document.getElementById("menu").className="menu"
+}

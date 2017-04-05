@@ -7,11 +7,43 @@
 #drie .container-left{
     width:250px;
     height:100vh;
+    z-index: 3;
 }
 
 #drie .container-left .container-left-top{
     width:250px;
     height:80%;
+}
+
+.menuLeft{
+    width:240px;
+    height:450px;
+    margin-top:40px;
+    background: #1e5799; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #1e5799 0%, #207cca 47%, #207cca 47%, #2989d8 60%, #7db9e8 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #1e5799 0%,#207cca 47%,#207cca 47%,#2989d8 60%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #1e5799 0%,#207cca 47%,#207cca 47%,#2989d8 60%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    border-radius: 40px;
+    box-shadow: 0px 0px 10px 5px #144987;
+    margin-left:10px;
+}
+
+.bombsAmount, .timer{
+    width:100%;
+    height: 150px;
+    display:flex;
+}
+
+.time{
+    margin:auto;
+    font-family: sevenSegment;
+    font-size:4em;
+    color:lawngreen;
+    background: black;
+    border:2px outset lawngreen;
+    border-radius: 5px;
+    min-width:170px;
+    text-align: center;
 }
 
 #drie .container-left .container-left-bottom{
@@ -31,6 +63,7 @@
     bottom:98.3px;
     position: absolute;
     transform: rotate(-23deg);
+    z-index: 2;
 }
 
 .sublight{
@@ -51,12 +84,13 @@
     width:800px;
     height:100vh;
     display:flex;
+    z-index:2;
 }
 
 #drie .container-right .menu{
     width:600px;
     height:625px;
-    margin-bottom:130px;
+    margin-bottom:180px;
     margin-left:120px;
     margin-top:auto;
     background: #1e5799; /* Old browsers */
@@ -142,6 +176,7 @@ input[type=number]{
 .btnContainer{
     display:flex;
     width:100%;
+    flex-direction: column;
 }
 
 .newGameNav{
@@ -179,13 +214,34 @@ input[type=number]{
     text-decoration: none;
     text-shadow: 0px -1px 1px #bdb5b4, 1px 1px 1px white;
     position: absolute;
-    width: 30px;
+    width: 200px;
     cursor: pointer;
 }
 
+.newGameBtn{
+    width:150px;
+}
+
+.menuBtn{
+    width:125px;
+    margin-bottom:20px;
+    margin-top:20px;
+}
 
 .generate:after{
     content: "Generate";
+    left: 21px;
+    top: 16px;
+}
+
+.menuBtn:after{
+    content: "Menu";
+    left: 21px;
+    top: 16px;
+}
+
+.newGameBtn:after{
+    content: "Restart";
     left: 21px;
     top: 16px;
 }
@@ -196,7 +252,7 @@ input[type=number]{
     color:#0088cc;
 }
 
-.generate:hover:after{
+.generate:hover:after, .newGameBtn:hover:after, .menuBtn:hover:after{
     color:#1064ea;
     text-shadow:0px 0px 6px #1064ea;
 }
@@ -210,4 +266,75 @@ input[type=number]{
 .btnplay:active:after{
     color:#dbd2d2;
     text-shadow: 0px -1px 1px #bdb5b4, 0px 1px 1px white;
+}
+
+#error{
+    font-weight:bold;
+    color:red;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.gone{
+    display: none;
+}
+
+#mineSweeperTable{
+    width:600px;
+    height:625px;
+    margin-bottom:180px;
+    margin-left:120px;
+    margin-top:auto;
+    background: #144987; 
+    box-shadow: 0px 0px 10px 5px #144987;
+    position:relative;
+    border-spacing: 0px;
+}
+
+#mineSweeperTable td{
+    background: #207cca;
+    border:1px solid #1f3860;
+    width:20px;
+    height:20px;
+    text-align: center;
+}
+
+.bombsAmount{
+    flex-direction: column;
+    height:100px;
+}
+
+.bombsAmountText{
+    font-family: 'PT Mono', monospace;
+    font-weight:bold;
+    font-size:1.5em;
+    margin:20px auto 0px auto;
+}
+
+.bombsAmountNrContainer{
+    width:100%;
+    height:44%;
+    display: flex;
+}
+
+.bombsAmountImg{
+    width:45px;
+    height:45px;
+    background:url(../img/bom.png) 50% 50% / contain no-repeat;
+    margin-left:auto;
+}
+
+.bombsAmountNr{
+    width:50%;
+    height: 100%;
+    display:flex;
+}
+
+.bombsAmountNrText{
+    font-family: 'PT Mono', monospace;
+    font-weight:bold;
+    font-size:1.5em;
+    margin:auto auto 4px 0px;
 }

@@ -10,7 +10,7 @@ function Dinge(column, row, parent, bomb){
 
 Dinge.prototype.clicked = function(field)
     {   
-        if(this.flagged==""){
+        if(this.flagged===""){
             if(this.parent.time==0){ this.parent.start() }
             if (this.bomb)
                 {
@@ -45,14 +45,14 @@ Dinge.prototype.rightclicked = function()
         } else { this.flagged=false }
     }
 
-function Board(cols, rows, bombs){
+function Board(rows, cols, bombs){
     this.cols = cols,
     this.rows = rows,
     this.bombs = bombs,
     this.time = 0,
-    this.start = ()=>{this.interval = setInterval(()=>{this.time+=0.1},100)}
-    this.interval
-    this.stop = ()=>{clearInterval(this.interval)}
+    this.start = ()=>{this.interval = setInterval(()=>{this.time+=0.1},100)},
+    this.interval,
+    this.stop = ()=>{clearInterval(this.interval)},
     this.bombCount = bombs,
     this.field = new Array(this.cols);
     this.create = function(){
@@ -67,8 +67,9 @@ function Board(cols, rows, bombs){
             }
         for(var b = 0; b < this.bombs; b++)
             {
-                var col = Math.floor( Math.random() * this.cols);
-                var hor = Math.floor( Math.random() * this.rows);
+                var hor = Math.floor( Math.random() * this.cols);
+                var col = Math.floor( Math.random() * this.rows);
+                
                 if (!this.field[col][hor].bomb)
                     {
                        this.field[col][hor].bomb = true;
@@ -81,8 +82,8 @@ function Board(cols, rows, bombs){
 }
 
 function testRond(self, field, fromLeeg = false, array){
-    if(self.row==field[0].length-1){var isMaxR=self.row}else{var isMaxR=self.row+1}
-    if(self.column==field.length-1){var isMaxC=self.column}else{var isMaxC=self.column+1}
+    if(self.row==field.length-1){var isMaxR=self.row}else{var isMaxR=self.row+1}
+    if(self.column==field[0].length-1){var isMaxC=self.column}else{var isMaxC=self.column+1}
     
     for (var i = Math.max(self.row-1, 0);i <= isMaxR; i++)//Rij doorlopen
         { 

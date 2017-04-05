@@ -1,0 +1,27 @@
+.floor_container{
+    position:absolute;
+    bottom:0vh;
+    left:0vh;
+    width:100%;
+    height:20vh;
+    z-index:1;
+    box-sizing: border-box;
+}
+.floor{
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    background-image: url("https://www.transparenttextures.com/patterns/sandpaper.png");
+}
+#floor_een{
+    clip-path: polygon(0% 65%, 7% 56%, 21% 72%, 35% 55%, 41% 56%, 45% 77%, 53% 71%, 60% 54%, 63% 35%, 71% 26%, 79% 37%, 86% 49%, 89% 42%, 92% 34%, 95% 26%, 97% 32%, 99% 51%, 100% 70%, 100% 100%, 0% 100%);     
+    background-color:#c2b280;
+    z-index:3;
+}
+#floor_twee{
+    clip-path: polygon(0% 72%, 26% 56%, 30% 56%, 40% 68%, 61% 72%, 63% 56%, 66% 42%, 72% 53%, 74% 36%, 78% 31%, 82% 53%, 85% 34%, 91% 22%, 94% 30%, 96% 16%, 100% 16%, 100% 99%, 0% 100%);
+    background-color:#6d3f03;
+    z-index:1;
+}
