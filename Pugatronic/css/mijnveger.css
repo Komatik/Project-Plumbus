@@ -234,6 +234,15 @@ input[type=number]{
     top: 16px;
 }
 
+.hervatten{
+    width: 240px;
+}
+.hervatten:after{
+    content: "Hervatten";
+    left: 21px;
+    top: 16px;
+}
+
 .menuBtn:after{
     content: "Menu";
     left: 21px;
@@ -252,7 +261,7 @@ input[type=number]{
     color:#0088cc;
 }
 
-.generate:hover:after, .newGameBtn:hover:after, .menuBtn:hover:after{
+.generate:hover:after, .newGameBtn:hover:after, .menuBtn:hover:after, .hervatten:hover:after{
     color:#1064ea;
     text-shadow:0px 0px 6px #1064ea;
 }
@@ -346,4 +355,58 @@ input[type=number]{
 
 #menuContinue, #menuHighscores{
     display: none
+}
+
+
+/*
+    * continue - tab
+*/
+#continueGameContainer{
+    padding: 10%;
+    margin: auto;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+#title{
+    font-size: 18px;
+    font-weight: bold;
+}
+.board{
+    height: 300px;
+    width: 300px;
+    background: rgba( 255, 255, 255, 0.1);
+    border: solid 1px #fff;
+    margin: 10px;
+} 
+#date{
+    margin-bottom: 10px
+}
+/*
+    * highscores - tab
+*/
+
+#highscoreGameContainer{
+    margin: auto;
+    padding: 10%;
+}
+
+#highscoreGameContainer table:nth-child(1){
+    margin: 0 0 10px 0;
+}
+#highscoreGameContainer table:nth-child(2){
+    width: 100%;
+    color: #fff;
+}
+#highscoreGameContainer table:nth-child(2){
+    font-weight: bold;
+}
+
+
+
+
+input, select {
+    padding: 5px;
 }

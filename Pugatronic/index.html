@@ -376,10 +376,37 @@
                 <div class="btnContainer"><a class="btnplay generate" onclick="generate()"></a></div>
               </div>
               <div class="menuContinue" id="menuContinue">
-                <h1>continue</h1>
+                <div id="continueGameContainer">
+                  <div id="title">Wens je dit spel te hervatten ?</div>
+                  <div class="board"> </div>
+                  <div id="date">Je hebt dit spel gespeeld op .../.../...</div><a class="btnplay hervatten" id="continue"></a>
+                </div>
               </div>
               <div class="menuHighscores" id="menuHighscores"> 
-                <h1>highscores</h1>
+                <div id="highscoreGameContainer">
+                  <!-- search name, config, time, enter-->
+                  <!-- text, dropdown, plane, btn-->
+                  <table>
+                    <th>
+                      <td>
+                        <input type="text" id="spelerNaam" placeholder="speler naam">
+                      </td>
+                      <td>
+                        <select id="spelerConfig"></select>
+                      </td>
+                      <td>
+                        <input type="button" id="zoeken" value="zoek">
+                      </td>
+                    </th>
+                  </table>
+                  <table>
+                    <th>
+                      <td>Speler</td>
+                      <td>Configuratie</td>
+                      <td>Tijd</td>
+                    </th>
+                  </table>
+                </div>
               </div>
             </div>
           </div>

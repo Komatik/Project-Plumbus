@@ -37,9 +37,30 @@
                 .btnContainer
                     a(onclick="generate()" class="btnplay generate")
             .menuContinue#menuContinue
-                h1 continue
+                #continueGameContainer
+                    #title Wens je dit spel te hervatten ?
+                    .board  
+                    #date Je hebt dit spel gespeeld op .../.../...
+                    a( id="continue" class="btnplay hervatten" )
             .menuHighscores#menuHighscores 
-                h1 highscores
+                #highscoreGameContainer
+                    // search name, config, time, enter
+                    // text, dropdown, plane, btn
+                    table
+                        th
+                            td
+                                input( type="text" id="spelerNaam" placeholder="speler naam" )
+                            td
+                                select( id="spelerConfig" )
+                            td
+                              input( type="button" id="zoeken" value="zoek"  )  
+                    table
+                        th
+                            td Speler
+                            td Configuratie
+                            td Tijd
+                        
+
 .floor_container
     .floor#floor_een
     .container-left-bottom
