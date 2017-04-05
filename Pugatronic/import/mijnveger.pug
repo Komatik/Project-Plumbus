@@ -20,7 +20,7 @@
             .continue#continue
                 h4.header Continue
             .highscores#highscores
-                    h4.header Highscores
+                h4.header Highscores
         .menuContent#menuContent
             .menuNewGame#menuNewGame
                 .newGameNav
@@ -62,8 +62,13 @@
                             th Configuratie
                             th Tijd
                         tbody(id="highscoresTable")
-                        
-
+    #dialog
+        br
+        h4#tableValues.white
+        br
+        br
+        label.lbl.white Submit your score:
+        input( type="text" id="playerName" placeholder="Name" ).lbl.dialogInput
 .floor_container
     .floor#floor_een
     .container-left-bottom

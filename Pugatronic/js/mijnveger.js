@@ -11,6 +11,7 @@ function menu(){
     }
     highlight("continue")
     highlight("highscores")
+    fillScores()
 }
 
 function clicked(node){
@@ -66,6 +67,12 @@ function checkValues(){
 
 function backToMenu(){
     document.getElementById("menuLeft").className+=" hidden"
-    document.getElementById("container-right").removeChild(document.getElementById("container-right").childNodes[2])
+    document.getElementById("container-right").removeChild(document.getElementById("container-right").children[1])
     document.getElementById("menu").className="menu"
+}
+
+function fillScores(){
+    $.get("http://plumbuster.herokuapp.com/configs/",(data)=>{
+        console.log(data)
+    })
 }

@@ -440,3 +440,34 @@ input, select {
 #highscoresTable tr:nth-child(3){
     background: sandybrown;
 }
+
+#dialog{
+    
+}
+
+.dialogStyle{
+    background:url("http://www.techglint.com/wp-content/uploads/2011/09/Windows_8_Wallpaper_by_minhtrimatrix.jpg") 50% 50% / cover no-repeat;
+}
+
+.ui-widget.ui-widget-content{
+    border:0px;
+    box-shadow: 0px 0px 10px 2px blue;
+}
+
+.trans{
+    background: transparent;
+    border:0px;
+}
+
+.dialogInput{
+    margin-left:10px;
+    text-align: left;
+    width:180px;
+}
+
+.dialogTitle{
+    color:gold;
+    font-size:1.6em;
+}
+
+.white{ color:white; }

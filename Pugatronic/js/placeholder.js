@@ -1,8 +1,9 @@
 var prevSettings={rows:10,cols:10,bombs:10}
 var time=0;
+var test
 
 function init(r=prevSettings.rows,c=prevSettings.cols,b=prevSettings.bombs){
-    if(document.getElementById("container-right").childNodes[2]){ document.getElementById("container-right").removeChild(document.getElementById("container-right").childNodes[2]) }
+    if(document.getElementById("container-right").children[1]){ document.getElementById("container-right").removeChild(document.getElementById("container-right").children[1]) }
     var newGame = new Board(r,c,b)
     prevSettings.rows=newGame.rows
     prevSettings.cols=newGame.cols
@@ -10,6 +11,7 @@ function init(r=prevSettings.rows,c=prevSettings.cols,b=prevSettings.bombs){
     document.getElementById("bombsAmount").innerHTML = newGame.bombCount
     document.getElementById("time").innerText = "0.0"
     clearInterval(time); time=0;
+    test=false
     newGame.create()
     createTable(newGame)
 }
@@ -67,14 +69,73 @@ function testValues(boardObj){
 }
 
 function winOrLose(board, clickedObj){
-    if(board.won){
+    if(board.won && !test){
         clearInterval(time)
-    }
+        $("#tableValues").html("You've managed to complete a "+board.rows+"x"+board.cols+" grid with "+board.bombs+" bombs, in an impressive "+ $("#time").html() +" seconds!")        
+        $("#dialog").data("board",board).dialog("open")  
+        test=!test
+    } 
 }
+
+$("#dialog").dialog({
+    autoOpen: false,
+    height: 'auto',
+    width: 580,
+    modal: true,
+    resizable:false,
+    title:"Congratulations, you've won!",
+    classes: {
+        "ui-dialog": "dialogStyle",
+        "ui-dialog-titlebar": "trans",
+        "ui-dialog-title": "dialogTitle",
+        "ui-dialog-buttonpane": "trans"
+    },
+    buttons: {
+        "Submit": function() {
+            var board = $(this).data('board');
+            $.post("http://plumbuster.herokuapp.com/invoegen/"+$("#playerName").val()+"/"+ $("#time").html() +"/"+board.rows+"/"+board.cols+"/"+board.bombs+"/")
+            $("#playerName").val("")
+            $("#dialog").dialog("close")
+        },
+    },
+    close: {}
+});
+
 
 /* ==========================TEST FUNCTIE=============================
 (function(){
     var cells = document.getElementsByTagName("td")
     for(var i=0;i< cells.length;i++){ cells[i].click() }
 })()
+
+
+$(document).ready( function() {
+
+    $("#alert_button").click( function() {
+        jAlert('This is a custom alert box', 'Alert Dialog');
+    });
+
+    $("#confirm_button").click( function() {
+        jConfirm('Can you confirm this?', 'Confirmation Dialog', function(r) {
+            jAlert('Confirmed: ' + r, 'Confirmation Results');
+        });
+    });
+
+    $("#prompt_button").click( function() {
+        jPrompt('Type something:', 'Prefilled value', 'Prompt Dialog', function(r) {
+            if( r ) alert('You entered ' + r);
+        });
+    });
+
+    $("#alert_button_with_html").click( function() {
+        jAlert('You can use HTML, such as <strong>bold</strong>, <em>italics</em>, and <u>underline</u>!');
+    });
+
+    $(".alert_style_example").click( function() {
+        $.alerts.dialogClass = $(this).attr('id'); // set custom style class
+        jAlert('This is the custom class called &ldquo;style_1&rdquo;', 'Custom Styles', function() {
+            $.alerts.dialogClass = null; // reset to default
+        });
+    });
+});
 */

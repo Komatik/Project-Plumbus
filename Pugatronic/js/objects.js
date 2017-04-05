@@ -120,10 +120,10 @@ function testWin(f){
 
     if(teller==(f[0][0].parent.rows*f[0][0].parent.cols)-f[0][0].parent.bombs){
         f[0][0].parent.won=true
-        for(var i=0;i<field.length;i++){
-            for(var j=0;j<field[i].length;j++){
-                field[i][j].flipped=true; 
-                field[i][j].flagged="lost";
+        for(var i=0;i<f.length;i++){
+            for(var j=0;j<f[i].length;j++){
+                f[i][j].flipped=true; 
+                f[i][j].flagged="lost";
             }
         }
     }

@@ -6,6 +6,13 @@ var express = require('express');
 var mongo = require('mongodb').MongoClient;
 var server = express();
 
+server.all('/*', function(req, res, next) {
+    console.log("request received")
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next();
+});
+
 server.all('/top/naam/:naam', function (req, res){ //Roep alle scores bij naam op
     mongo.connect('mongodb://'+ url, function(err, db){
         if (!err){
