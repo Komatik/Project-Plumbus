@@ -32,8 +32,10 @@ Dinge.prototype.clicked = function(field)
                             testRond(empties[i], field, true, empties)
                             empties[i].flipped=true
                         }
+                        testWin(field)
                         return empties
                 } else{ this.flipped=true }
+                testWin(field)
             return [this];    
         } else { return [] }
     }
@@ -41,8 +43,8 @@ Dinge.prototype.clicked = function(field)
 Dinge.prototype.rightclicked = function()
     {
         if(!this.flipped){
-            this.flagged=="" ? (this.flagged="f",this.parent.bombCount--) : this.flagged=="f" ? this.flagged="q" : (this.flagged="",this.parent.bombCount++) ; 
-        } else { this.flagged=false }
+            this.flagged=="" ? (this.flagged="f",this.parent.bombCount-= this.parent.bombCount!=0?1:0) : this.flagged=="f" ? this.flagged="q" : (this.flagged="",this.parent.bombCount+= this.parent.bombCount!=this.parent.bombs?1:0) ; 
+        } else { this.flagged=false } 
     }
 
 function Board(rows, cols, bombs){
@@ -55,6 +57,7 @@ function Board(rows, cols, bombs){
     this.stop = ()=>{clearInterval(this.interval)},
     this.bombCount = bombs,
     this.field = new Array(this.cols);
+    this.won = false,
     this.create = function(){
         for(var i = 0; i < this.rows; i++)
             {
@@ -105,4 +108,23 @@ function objectTest(test, arr){
         if(arr[i].row == test.row && arr[i].column == test.column){ return false }
     }
     return true
+}
+
+function testWin(f){
+    var teller = 0
+    for (var i=0;i<f.length;i++){
+        for(var j=0;j<f[0].length;j++){
+            if(f[i][j].flipped==true){ teller++ }
+        }
+    }
+
+    if(teller==(f[0][0].parent.rows*f[0][0].parent.cols)-f[0][0].parent.bombs){
+        f[0][0].parent.won=true
+        for(var i=0;i<field.length;i++){
+            for(var j=0;j<field[i].length;j++){
+                field[i][j].flipped=true; 
+                field[i][j].flagged="lost";
+            }
+        }
+    }
 }

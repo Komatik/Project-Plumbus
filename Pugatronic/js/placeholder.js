@@ -1,5 +1,5 @@
 var prevSettings={rows:10,cols:10,bombs:10}
-var time
+var time=0;
 
 function init(r=prevSettings.rows,c=prevSettings.cols,b=prevSettings.bombs){
     if(document.getElementById("container-right").childNodes[2]){ document.getElementById("container-right").removeChild(document.getElementById("container-right").childNodes[2]) }
@@ -9,10 +9,8 @@ function init(r=prevSettings.rows,c=prevSettings.cols,b=prevSettings.bombs){
     prevSettings.bombs=newGame.bombs
     document.getElementById("bombsAmount").innerHTML = newGame.bombCount
     document.getElementById("time").innerText = "0.0"
-    clearInterval(time)
+    clearInterval(time); time=0;
     newGame.create()
-    console.log(newGame)
-    console.log(newGame.field)
     createTable(newGame)
 }
 
@@ -57,29 +55,22 @@ function testValues(boardObj){
             }
         }
         winOrLose(boardObj, selObj)
-    } else if(event.button == 2){
+    } else if(event.button == 2 && time!=0){
         selObj.rightclicked()
         switch(selObj.flagged){
             case(""):event.target.innerHTML="";event.target.style.background="#207cca";break;
             case("f"):event.target.style.background="#207cca url(../img/flag.png) 90% 70% / 80% 70% no-repeat";break;
             case("q"):event.target.innerHTML="?";event.target.style.background="#207cca";break;
         }
+        document.getElementById("bombsAmount").innerHTML = boardObj.bombCount
     }
 }
 
 function winOrLose(board, clickedObj){
-    if(clickedObj.count=="💣"){ 
-
-    } else {
-
+    if(board.won){
+        clearInterval(time)
     }
 }
-
-/* ---------------HANDLEIDING---------------------
-AANTAL BOMMEN: boardObj.bombCount
-RESTART ZONDER REFRESH: init()
-*/
-
 
 /* ==========================TEST FUNCTIE=============================
 (function(){
