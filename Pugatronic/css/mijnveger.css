@@ -338,3 +338,11 @@ input[type=number]{
     font-size:1.5em;
     margin:auto auto 4px 0px;
 }
+
+/*
+    ====== mijnveger tabs ======
+*/
+
+#menuContinue, #menuHighscores{
+    display: none
+}
