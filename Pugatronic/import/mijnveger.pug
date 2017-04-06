@@ -47,29 +47,29 @@
                     table(colspan="0" rowspan="0")
                         th
                             td
-                                input( type="text" id="spelerNaam" placeholder="speler naam" )
+                                input( type="text" id="spelerNaam" placeholder="Player name" oninput="nameKeypress()")
                             td
-                                select( id="spelerConfig" )
-                                    option(value="0") -- configuratie --
+                                select( id="spelerConfig" onchange="playerConfigChange()")
+                                    option(value="0") -- select a config --
                             td &nbsp;OR&nbsp;
                             td
                                 select( id="selectConfig" )
-                                    option(value="0") -- configuratie --
+                                    option(value="0") -- configuration --
                         tr
                             td
                             td.flex
-                                input( type="button" id="zoekenNaam" value="zoek op naam" onclick="zoekNaam()" )
+                                input( type="button" id="zoekenNaam" value="search by name" onclick="zoek('naam')" disabled)
                             td
                             td  
                             td.flex
-                                input( type="button" id="zoekenConfig" value="zoek op config" onclick="zoekConfig()"  )
+                                input( type="button" id="zoekenConfig" value="search by config" onclick="zoek('config')")
                     table(colspan="0" rowspan="0" border="0")#scoresTable
                         thead
-                            th Speler
-                            th Configuratie
-                            th Tijd
+                            th Player
+                            th Configuration
+                            th Time
                         tbody(id="highscoresTable")
-    #dialog
+    #dialog.gone
         br
         h4#tableValues.white
         br

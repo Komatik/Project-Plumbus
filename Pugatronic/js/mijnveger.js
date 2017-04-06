@@ -69,6 +69,10 @@ function backToMenu(){
     document.getElementById("menuLeft").className+=" hidden"
     document.getElementById("container-right").removeChild(document.getElementById("container-right").children[1])
     document.getElementById("menu").className="menu"
+    $("#selectConfig").find("option").remove().end().append('<option value="0">-- configuration --</option>')
+    fillScores()
+    $("#spelerNaam").val("")
+    $("#spelerConfig").find("option").remove().end().append('<option value="0">-- select a config --</option>')
 }
 
 function fillScores(){
@@ -79,9 +83,9 @@ function fillScores(){
     })
 }
 
-function zoekConfig(){
+function zoek(val){
     if($("#highscoresTable")){$("#highscoresTable").remove() ; $("#scoresTable").append("<tbody id='highscoresTable'></tbody>")}
-    var v= $("#selectConfig").val()
+    var v= val=="config"?$("#selectConfig").val():$("#spelerConfig").val();
     var r= v.substring(0,v.indexOf("x"))
     var c= v.substring(v.indexOf("x")+1,v.indexOf("-"))
     var b= v.substring(v.indexOf("-")+1)
@@ -89,15 +93,15 @@ function zoekConfig(){
     
     $.get("http://plumbuster.herokuapp.com/top/diff/"+r+"/"+c+"/"+b+"/",(data)=>{
         data.forEach((config)=>{
+            if(een!="/"&&twee!="/"&&drie!="/"){
+                config.tijd<een.tijd?(drie=twee,twee=een,een=config):config.tijd<twee.tijd?(drie=twee,twee=config):config.tijd<drie.tijd?drie=config:config=config;
+            }
             switch(true){
                 case(een=="/"):een=config;break;
                 case(twee=="/"):config.tijd<een.tijd?(twee=een,een=config):twee=config;break;
                 case(drie=="/"):config.tijd<een.tijd?(drie=twee,twee=een,een=config):config.tijd<twee.tijd?(drie=twee,twee=config):drie=config;break;
             }
-            if(drie!="/"){
-                config.tijd<een.tijd?(drie=twee,twee=een,een=config):config.tijd<twee.tijd?(drie=twee,twee=config):config.tijd<drie.tijd?drie=config:config=config;
-            }
-        })
+        })   
         if(een!="/"){
             $("#highscoresTable").append("<tr><td>"+een.naam+"</td><td>"+een.row+" x "+een.col+" - 💣"+een.bombs+"</td><td>"+een.tijd+"</td></tr>")
             if(twee!="/"){
@@ -108,4 +112,21 @@ function zoekConfig(){
             }
         }
     })
+}
+
+function nameKeypress(){
+    $("#spelerConfig").find("option").remove().end().append('<option value="0">-- select a config --</option>')
+    
+    $.get("http://plumbuster.herokuapp.com/top/naam/"+event.target.value+"/",(data)=>{
+        data=JSON.parse(data)
+        data.forEach((playerScore)=>{
+            if($('#spelerConfig option[value='+playerScore.row+"x"+playerScore.col+"-"+playerScore.bombs+']').length==0){
+                $("#spelerConfig").append(new Option(playerScore.row+" x "+playerScore.col+" - 💣"+playerScore.bombs,playerScore.row+"x"+playerScore.col+"-"+playerScore.bombs))
+            }
+        })
+    })
+}
+
+function playerConfigChange(){
+    $("#zoekenNaam")[0].disabled = event.target.value!=0?false:true;
 }
