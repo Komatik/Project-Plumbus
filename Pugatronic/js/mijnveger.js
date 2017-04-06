@@ -73,6 +73,39 @@ function backToMenu(){
 
 function fillScores(){
     $.get("http://plumbuster.herokuapp.com/configs/",(data)=>{
-        console.log(data)
+        data.forEach((config)=>{
+            $("#selectConfig").append(new Option(config.row+" x "+config.col+" - 💣"+config.bombs,config.row+"x"+config.col+"-"+config.bombs))
+        })
+    })
+}
+
+function zoekConfig(){
+    if($("#highscoresTable")){$("#highscoresTable").remove() ; $("#scoresTable").append("<tbody id='highscoresTable'></tbody>")}
+    var v= $("#selectConfig").val()
+    var r= v.substring(0,v.indexOf("x"))
+    var c= v.substring(v.indexOf("x")+1,v.indexOf("-"))
+    var b= v.substring(v.indexOf("-")+1)
+    var een="/", twee="/", drie="/"
+    
+    $.get("http://plumbuster.herokuapp.com/top/diff/"+r+"/"+c+"/"+b+"/",(data)=>{
+        data.forEach((config)=>{
+            switch(true){
+                case(een=="/"):een=config;break;
+                case(twee=="/"):config.tijd<een.tijd?(twee=een,een=config):twee=config;break;
+                case(drie=="/"):config.tijd<een.tijd?(drie=twee,twee=een,een=config):config.tijd<twee.tijd?(drie=twee,twee=config):drie=config;break;
+            }
+            if(drie!="/"){
+                config.tijd<een.tijd?(drie=twee,twee=een,een=config):config.tijd<twee.tijd?(drie=twee,twee=config):config.tijd<drie.tijd?drie=config:config=config;
+            }
+        })
+        if(een!="/"){
+            $("#highscoresTable").append("<tr><td>"+een.naam+"</td><td>"+een.row+" x "+een.col+" - 💣"+een.bombs+"</td><td>"+een.tijd+"</td></tr>")
+            if(twee!="/"){
+                $("#highscoresTable").append("<tr><td>"+twee.naam+"</td><td>"+twee.row+" x "+twee.col+" - 💣"+twee.bombs+"</td><td>"+twee.tijd+"</td></tr>")
+                if(drie!="/"){
+                    $("#highscoresTable").append("<tr><td>"+drie.naam+"</td><td>"+drie.row+" x "+drie.col+" - 💣"+drie.bombs+"</td><td>"+drie.tijd+"</td></tr>")
+                }
+            }
+        }
     })
 }

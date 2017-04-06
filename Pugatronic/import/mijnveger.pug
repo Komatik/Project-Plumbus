@@ -51,12 +51,19 @@
                             td
                                 select( id="spelerConfig" )
                                     option(value="0") -- configuratie --
-                                    option(value="3x3") 3 x 3
-                                    option(value="5x5") 5 x 5
-                                    option(value="10x10") 10 x 10
+                            td &nbsp;OR&nbsp;
                             td
-                              input( type="button" id="zoeken" value="zoek"  )  
-                    table(colspan="0" rowspan="0" border="0")
+                                select( id="selectConfig" )
+                                    option(value="0") -- configuratie --
+                        tr
+                            td
+                            td.flex
+                                input( type="button" id="zoekenNaam" value="zoek op naam" onclick="zoekNaam()" )
+                            td
+                            td  
+                            td.flex
+                                input( type="button" id="zoekenConfig" value="zoek op config" onclick="zoekConfig()"  )
+                    table(colspan="0" rowspan="0" border="0")#scoresTable
                         thead
                             th Speler
                             th Configuratie

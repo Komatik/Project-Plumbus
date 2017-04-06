@@ -404,17 +404,28 @@
                       <td>
                         <select id="spelerConfig">
                           <option value="0">-- configuratie --</option>
-                          <option value="3x3">3 x 3</option>
-                          <option value="5x5">5 x 5</option>
-                          <option value="10x10">10 x 10</option>
                         </select>
                       </td>
+                      <td>&nbsp;OR&nbsp;</td>
                       <td>
-                        <input type="button" id="zoeken" value="zoek">
+                        <select id="selectConfig">
+                          <option value="0">-- configuratie --</option>
+                        </select>
                       </td>
                     </th>
+                    <tr>
+                      <td></td>
+                      <td class="flex">
+                        <input type="button" id="zoekenNaam" value="zoek op naam" onclick="zoekNaam()">
+                      </td>
+                      <td></td>
+                      <td> </td>
+                      <td class="flex">
+                        <input type="button" id="zoekenConfig" value="zoek op config" onclick="zoekConfig()">
+                      </td>
+                    </tr>
                   </table>
-                  <table colspan="0" rowspan="0" border="0">
+                  <table colspan="0" rowspan="0" border="0" id="scoresTable">
                     <thead>
                       <th>Speler</th>
                       <th>Configuratie</th>

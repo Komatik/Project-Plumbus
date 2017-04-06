@@ -393,7 +393,7 @@ table{
 }
 #highscoreGameContainer{
     margin: auto;
-    padding: 10%;
+    padding: 5%;
 }
 
 #highscoreGameContainer table:nth-child(1){
@@ -436,13 +436,14 @@ input, select {
 }
 #highscoresTable tr:nth-child(2){
     background: #eee;
+    color:black;
 }
 #highscoresTable tr:nth-child(3){
     background: sandybrown;
 }
 
-#dialog{
-    
+#zoekenNaam, #zoekenConfig{
+    margin:auto;
 }
 
 .dialogStyle{
@@ -471,3 +472,4 @@ input, select {
 }
 
 .white{ color:white; }
+.flex{ display:flex; }
