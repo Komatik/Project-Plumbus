@@ -101,7 +101,7 @@ function zoek(val){
                 case(twee=="/"):config.tijd<een.tijd?(twee=een,een=config):twee=config;break;
                 case(drie=="/"):config.tijd<een.tijd?(drie=twee,twee=een,een=config):config.tijd<twee.tijd?(drie=twee,twee=config):drie=config;break;
             }
-        })   
+        })
         if(een!="/"){
             $("#highscoresTable").append("<tr><td>"+een.naam+"</td><td>"+een.row+" x "+een.col+" - 💣"+een.bombs+"</td><td>"+een.tijd+"</td></tr>")
             if(twee!="/"){

@@ -10,6 +10,7 @@ function Dinge(column, row, parent, bomb){
 
 Dinge.prototype.clicked = function(field)
     {   
+        save(this)
         if(this.flagged===""){
             if(this.parent.time==0){ this.parent.start() }
             if (this.bomb)
@@ -126,5 +127,24 @@ function testWin(f){
                 f[i][j].flagged="lost";
             }
         }
+    }
+}
+
+function save(obj){
+    var board = {
+        cols: obj.parent.cols,
+        rows: obj.parent.rows,
+        bombs: obj.parent.bombs,
+        time: parseInt(obj.parent.time*10)/10,
+        bombCount: obj.parent.bombCount
+    }
+    
+    var field = new Array(parseInt(board.rows))
+    for(var i=0;i<field.length;i++){ field[i] = new Array(parseInt(board.cols)) }
+    console.log(field)
+    if (localStorage) {
+        localStorage.setItem('board', JSON.stringify(board));
+    } else {
+        alert('Your browser does not support local storage.')
     }
 }
