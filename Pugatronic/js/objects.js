@@ -34,18 +34,21 @@ Dinge.prototype.clicked = function(field)
                             empties[i].flipped=true
                         }
                         testWin(field)
+                        save(this)
                         return empties
                 } else{ this.flipped=true }
                 testWin(field)
+                save(this)
             return [this];    
-        } else { return [] }
+        } else {save(this); return [] }
     }
 
 Dinge.prototype.rightclicked = function()
     {
         if(!this.flipped){
             this.flagged=="" ? (this.flagged="f",this.parent.bombCount-= this.parent.bombCount!=0?1:0) : this.flagged=="f" ? this.flagged="q" : (this.flagged="",this.parent.bombCount+= this.parent.bombCount!=this.parent.bombs?1:0) ; 
-        } else { this.flagged=false } 
+        } else { this.flagged=false }
+        save(this) 
     }
 
 function Board(rows, cols, bombs){
@@ -140,10 +143,23 @@ function save(obj){
     }
     
     var field = new Array(parseInt(board.rows))
-    for(var i=0;i<field.length;i++){ field[i] = new Array(parseInt(board.cols)) }
-    console.log(field)
+    for(var i=0;i<field.length;i++){ 
+        field[i] = new Array(parseInt(board.cols))
+        for(var j=0;j<field[i].length;j++){
+            field[i][j] = {
+                flipped:obj.parent.field[i][j].flipped,
+                flagged:obj.parent.field[i][j].flagged,
+                row:i,
+                column:j,
+                bomb:obj.parent.field[i][j].bomb,
+                count:obj.parent.field[i][j].count
+            }
+        }
+    }
+
     if (localStorage) {
         localStorage.setItem('board', JSON.stringify(board));
+        localStorage.setItem('field', JSON.stringify(field));
     } else {
         alert('Your browser does not support local storage.')
     }
